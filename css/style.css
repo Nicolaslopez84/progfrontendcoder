@@ -1,0 +1,608 @@
+{
+    padding: 0;
+    margin: 0;
+}
+
+/* Fondo del body gral */
+body{
+    background-color: rgba(15, 85, 177, 0.801);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#grilla{
+    display:grid;
+    grid-template-columns: repeat (4, 100vh);
+    grid-template-areas: "header"
+                         "navegacion"
+                         "body__contenido"
+                         "footer";
+
+}
+
+header{
+    grid-area: header;
+    
+}
+
+.body__contenido{
+    grid-area: body__contenido; 
+}
+
+.navegacion{
+    grid-area: navegacion;
+}
+
+footer{
+    grid-area: footer;
+ 
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+/* css del header */
+header{
+    background: rgb(28,27,59);
+    background: linear-gradient(29deg, rgba(28,27,59,1) 29%, rgba(6,5,84,1) 40%, rgba(9,9,121,1) 67%, rgba(28,182,213,1) 96%);
+    display: grid;
+    grid-template-columns: 250px 3fr 0.5fr 1fr;
+    grid-template-rows: 5rem 0.5fr;
+    grid-template-areas: "logo titulo titulo idioma"
+                         "logo nav buscador navRedes"
+                         
+}
+
+.header__logo {
+    padding: 0;
+    grid-area: logo;  
+}
+
+.header__logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.header__titulo{
+    color: white;
+    grid-area: titulo;
+    font-size: 1.5rem;
+
+}
+
+.navegacion{
+    grid-area: nav;
+    display: flex;
+    align-items: center; 
+    justify-content: center
+}
+
+.navegacion__secciones{
+    padding: 0;
+    margin: 0;
+}
+
+.navegacion__secciones li {  
+    
+    display: inline-block;
+    list-style: none;  
+}
+
+.navegacion__secciones li a{
+    display: block;
+    padding: 2rem;
+    color: white;
+    text-decoration: none;
+}
+
+.navegacion__secciones li a:hover{
+    text-decoration: underline;
+}
+
+.buscador{
+    color: white;
+    grid-area: buscador;
+    display: flex; 
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
+}
+
+.buscador input{
+    width: 8rem;
+    margin: 1vh;
+}
+
+.buscador button, .idioma button{
+    width: 8rem;
+    border-radius: 10px;
+    border:none;
+    background-color: #2E86C1;
+    color: white;
+}
+
+.buscador button:hover, .idioma button:hover{
+    background-color: transparent;
+}
+
+.idioma{
+    grid-area: idioma;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navegacion__redes{
+    grid-area: navRedes;
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navegacion__redes img{
+    display: inline-block;
+    margin: 0.3rem;
+    width: 5vh;
+}
+
+/* css del body de index.html */
+.presentacion__articulo{
+    border: solid 2px black;
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+    grid-template-rows: auto;
+    grid-template-areas: "presentacionTitulo presentacionTitulo"
+                         "presentacionParrafo presentacionVideo";
+    justify-items: center;  
+}
+
+.presentacion__titulo{
+    text-align: center;
+    grid-area: presentacionTitulo;
+}
+
+.presentacion__parrafo{
+    margin: 1rem;
+    font-size: 1.2rem;
+    grid-area: presentacionParrafo;  
+}
+
+.presentacion__video{
+    grid-area: presentacionVideo;
+    padding: 0 0 5px 0; 
+}
+
+.clientes__titulo{
+    text-align: center; 
+}   
+
+.clientes__logos{
+  display: flex;
+  justify-content: center;
+  align-items:stretch;
+}
+
+.clientes__logos img{
+    width: auto;
+    height: auto;
+    width: 200px;
+    height: 200px;
+}
+
+.noticias{
+    margin-top: 10px;
+    display: flex;
+}
+
+.noticias h3{
+    text-align: center;
+}
+
+.noticias article{
+    border: solid 2px black;
+    margin: 1%;
+    text-align: center;
+}
+
+.noticias article p{
+    margin: 0.5rem;
+    font-size: 1.5rem;
+}
+
+
+/* css de equipo.html */
+
+.equipo h1{
+    text-align: center;
+}
+
+.equipo__empleado{
+    display: grid;
+    grid-template-areas: "nombre presentacion linkredes video"
+                         "foto presentacion linkredes video"
+                         "cv presentacion linkredes video";
+    grid-template-columns: 1fr 3fr 0.5fr 3fr;
+    grid-template-rows: 1fr 2fr 0.5fr;
+    margin: 2rem;
+    align-items: center;
+}
+
+.equipo__linkredes{
+  grid-area: linkredes;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;   
+}
+
+.equipo__linkredes img{
+    width: 7vh;
+    margin: 20px;   
+}
+
+.equipo__fotos{
+    grid-area: foto;
+    max-width: 110%;
+    max-height: 110%;
+    margin: 2px;
+}
+
+.equipo__empleado h3{
+    grid-area: nombre;
+    text-align: center;
+}
+
+.equipo__empleado article{
+    grid-area: presentacion;
+    margin: 10px;
+    padding-left: 2rem;
+}
+
+.equipo__empleado a{
+    grid-area: cv;
+}
+
+.equipo__video{
+    grid-area: video;
+    max-width: 90%;
+    max-height: 100 %;
+}
+
+/* css de servicios.html */
+.servicios h1{
+    text-align: center;
+}
+
+.servicios__servicio{
+    display: grid;
+    grid-template-areas: "h3 articulo"
+                         "img articulo";
+    align-items: center;
+    justify-items: center;
+    padding: 1rem;                    
+}
+
+.servicios h3{
+    grid-area: h3;
+}
+
+.servicios img{
+    width: 50vh;
+    grid-area: img;   
+}
+
+.servicios article{
+    grid-area: articulo;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* css de empleos.html */
+.empleos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 5px;
+
+}
+.titulosh1{
+    text-align: center;
+}
+.empleos__form fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.empleos__imagen{
+    width: 50%;
+    height: 50%;
+    align-self: center;
+    max-width: auto; 
+    max-height: auto;    
+}  
+
+textarea {
+    resize: none;
+} 
+
+/* css de contacto.html */
+h1{
+    text-align: center;
+}
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.contacto fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contacto__botones{
+    display: flex;
+    margin: 3px;
+}
+
+/* css del footer */
+footer{
+    background: rgb(28,27,59);
+    background: linear-gradient(29deg, rgba(28,27,59,1) 29%, rgba(6,5,84,1) 40%, rgba(9,9,121,1) 67%, rgba(28,182,213,1) 96%);
+    display: grid;
+    grid-template-areas: "footerNav footerRedes ubicacion"
+                         "politicas politicas copyright";
+    justify-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: 3fr 1fr;
+    align-items: center;
+}
+
+footer h4{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin: 0.5rem;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.footer__navegacion{
+    grid-area: footerNav;
+}
+
+.footer__navegacion ul{
+    
+    list-style: none;
+    padding: 0; 
+}
+
+.footer__navegacion li{
+    padding: 0.5rem;
+}
+
+.footer__redes{
+       color: white;
+       grid-area: footerRedes;
+}
+
+.footer__redes span{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;      
+}
+
+.footer__redes img{
+    width: 5vh;
+    padding: 5px;
+}
+
+.footer__ubicacion{
+    grid-area: ubicacion;
+}
+
+.footer__ubicacion iframe{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 5%;
+}
+
+.footer__politicas{
+    grid-area: politicas;
+    
+}
+
+.footer__politicas li{
+    display: inline-block;
+    padding: 10px;
+    list-style: none;
+}
+
+.copyright {
+    color:white;
+    margin: 5px;
+    grid-area: copyright;
+    align-self: center;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 1024px){
+
+/* header */   
+    header{
+        display: grid;
+        grid-template-columns: 250px 3fr 1fr;
+        grid-template-rows: 5rem 2fr 0.5fr;
+        grid-template-areas: "logo titulo idioma"
+                             "logo nav nav"
+                             "logo navRedes buscador"                         
+    }
+
+    .buscador{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .navegacion__redes{
+        justify-content: space-evenly;    
+    }
+
+    .idioma{
+        flex-direction: column;
+    }
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+/* header */
+    header{
+        grid-template-areas: "logo idioma idioma"
+                             "logo nav nav"
+                             "logo navRedes buscador";                        
+    }
+
+    .header__titulo{
+        display: none;
+    }
+
+    .idioma{
+        flex-direction: row;
+    }
+
+    .navegacion__secciones li a{
+        padding: 0.5rem;
+    }
+
+
+/* index */
+    .presentacion__articulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .noticias{
+        flex-direction: column;      
+    }
+
+    .clientes__logos{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+      
+      .clientes__logos img{
+          width: auto;
+          height: auto;
+          width: 200px;
+          height: 200px;
+      }
+
+/* equipo */ 
+      .equipo__empleado {
+          justify-items: center;
+          grid-template-columns: 1fr 3fr;   
+          grid-template-areas: "nombre presentacion"
+                                "foto presentacion"
+                                "linkredes presentacion"
+                                "cv presentacion"
+                                "video video";
+      }
+
+      .equipo__linkredes{
+          flex-direction: row;
+      }
+
+      .equipo__empleado a{
+          margin-bottom: 5px;
+      }
+
+/* servicios */
+      .servicios__servicio{
+          grid-template-areas: "h3 img"
+                                "articulo articulo";
+      }
+
+      .servicios img{
+          width: 30vh;
+      }
+
+/* empleos */
+      .empleos{
+          flex-direction: column;
+      }
+
+      .empleos__imagen{
+            width: 90%;
+            margin-top: 5px;
+      }
+
+/* footer */
+        footer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer h4{
+            text-align: center;
+            
+        }
+
+        .footer__navegacion li{
+            display: inline-block;
+            
+        }
+
+        .footer__redes{
+            margin: 3px;
+        }
+        
+        .footer__redes span{
+            
+        }
+
+        .footer__img img{
+            width: 7vh;
+        }
+
+        .footer__img{
+            display: flex;
+        }
+        
+        .footer__ubicacion iframe{
+            max-width: 100%;
+            margin: 0 8vh;
+        }
+
+        .footer__politicas{
+            display: inline-block;
+            order:5;
+            
+        }
+
+        .copyright{
+            display: inline-block;
+            order: 4;
+            
+        }
+
+
+
+}
