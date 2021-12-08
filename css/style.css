@@ -5,7 +5,8 @@
 
 /* Fondo del body gral */
 body{
-    background-color: rgba(15, 85, 177, 0.801);
+    background: rgb(43,46,199);
+    background: radial-gradient(circle, rgba(43,46,199,1) 0%, rgba(148,187,233,1) 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -28,6 +29,45 @@ header{
     grid-area: body__contenido; 
 }
 
+/* animacion para los h */
+.body__contenido h1, .body__contenido h2{
+ 	-webkit-animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-expand-fwd-top {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px) translateY(-500px);
+              transform: translateZ(-700px) translateY(-500px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+              transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand-fwd-top {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-700px) translateY(-500px);
+              transform: translateZ(-700px) translateY(-500px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+              transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+}
+
 .navegacion{
     grid-area: navegacion;
 }
@@ -43,8 +83,8 @@ footer a:hover{
 
 /* css del header */
 header{
-    background: rgb(28,27,59);
-    background: linear-gradient(29deg, rgba(28,27,59,1) 29%, rgba(6,5,84,1) 40%, rgba(9,9,121,1) 67%, rgba(28,182,213,1) 96%);
+    background: rgb(43,46,199);
+    background: radial-gradient(circle, rgba(43,46,199,1) 0%, rgba(148,187,233,1) 100%);
     display: grid;
     grid-template-columns: 250px 3fr 0.5fr 1fr;
     grid-template-rows: 5rem 0.5fr;
@@ -97,6 +137,7 @@ header{
 
 .navegacion__secciones li a:hover{
     text-decoration: underline;
+    font-size: 1.1rem;
 }
 
 .buscador{
@@ -144,6 +185,11 @@ header{
     display: inline-block;
     margin: 0.3rem;
     width: 5vh;
+    transition: 1s;
+}
+
+.navegacion__redes img:hover{
+    width: 7vh;
 }
 
 /* css del body de index.html */
@@ -210,7 +256,6 @@ header{
     margin: 0.5rem;
     font-size: 1.5rem;
 }
-
 
 /* css de equipo.html */
 
@@ -348,12 +393,24 @@ h1{
 .contacto__botones{
     display: flex;
     margin: 3px;
+
+}
+
+.boton{
+    border-radius: 10px;
+    border:none;
+    background-color: #2E86C1;
+    color: white;
+}
+
+.boton:hover{
+    background-color: transparent;
 }
 
 /* css del footer */
 footer{
-    background: rgb(28,27,59);
-    background: linear-gradient(29deg, rgba(28,27,59,1) 29%, rgba(6,5,84,1) 40%, rgba(9,9,121,1) 67%, rgba(28,182,213,1) 96%);
+    background: rgb(43,46,199);
+    background: radial-gradient(circle, rgba(43,46,199,1) 0%, rgba(148,187,233,1) 100%);
     display: grid;
     grid-template-areas: "footerNav footerRedes ubicacion"
                          "politicas politicas copyright";
