@@ -1,4 +1,4 @@
-{
+* {
     padding: 0;
     margin: 0;
 }
@@ -27,12 +27,18 @@ header{
 
 .body__contenido{
     grid-area: body__contenido; 
+    margin: 0.5%;
+}
+
+.body__contenido p{
+    margin: 10px;
 }
 
 /* animacion para los h */
 .body__contenido h1, .body__contenido h2{
  	-webkit-animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 	        animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            padding: 1%;
 }
 
 @-webkit-keyframes tracking-in-expand-fwd-top {
@@ -89,8 +95,8 @@ header{
     grid-template-columns: 250px 3fr 0.5fr 1fr;
     grid-template-rows: 5rem 0.5fr;
     grid-template-areas: "logo titulo titulo idioma"
-                         "logo nav buscador navRedes"
-                         
+                         "logo nav buscador navRedes";
+    margin: 0.5%;                     
 }
 
 .header__logo {
@@ -107,6 +113,7 @@ header{
     color: white;
     grid-area: titulo;
     font-size: 1.5rem;
+    padding: 1%;
 
 }
 
@@ -227,7 +234,7 @@ header{
 .clientes__logos{
   display: flex;
   justify-content: center;
-  align-items:stretch;
+  margin: 20px;
 }
 
 .clientes__logos img{
@@ -237,6 +244,119 @@ header{
     height: 200px;
 }
 
+/* animaciones logos clientes */
+.clientes__logos img{
+	-webkit-animation: bounce-in-fwd 1.1s both;
+	        animation: bounce-in-fwd 1.1s both;
+            animation-delay: 1s;            
+}
+
+ @-webkit-keyframes bounce-in-fwd {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      -webkit-transform: scale(0.7);
+              transform: scale(0.7);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    72% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    81% {
+      -webkit-transform: scale(0.84);
+              transform: scale(0.84);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    89% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    95% {
+      -webkit-transform: scale(0.95);
+              transform: scale(0.95);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+
+  @keyframes bounce-in-fwd {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      -webkit-transform: scale(0.7);
+              transform: scale(0.7);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    72% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    81% {
+      -webkit-transform: scale(0.84);
+              transform: scale(0.84);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    89% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    95% {
+      -webkit-transform: scale(0.95);
+              transform: scale(0.95);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+ }
+  
 .noticias{
     margin-top: 10px;
     display: flex;
@@ -284,6 +404,11 @@ header{
 .equipo__linkredes img{
     width: 7vh;
     margin: 20px;   
+    border-radius: 3px;
+}
+
+.equipo__linkredes img:hover{
+    width: 8vh;   
 }
 
 .equipo__fotos{
@@ -311,7 +436,7 @@ header{
 .equipo__video{
     grid-area: video;
     max-width: 90%;
-    max-height: 100 %;
+    max-height: 100%;
 }
 
 /* css de servicios.html */
@@ -355,10 +480,16 @@ header{
 .titulosh1{
     text-align: center;
 }
+
 .empleos__form fieldset{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: 5px;
+}
+
+input, option, label, select, textarea, legen, legend{
+    margin: 2px 3px;
 }
 
 .empleos__imagen{
@@ -368,6 +499,10 @@ header{
     max-width: auto; 
     max-height: auto;    
 }  
+
+.empleos__form__botones{
+    margin: 5px;
+}
 
 textarea {
     resize: none;
@@ -401,6 +536,8 @@ h1{
     border:none;
     background-color: #2E86C1;
     color: white;
+    margin:2px;
+    width: 7rem;
 }
 
 .boton:hover{
@@ -630,10 +767,6 @@ footer a{
         .footer__redes{
             margin: 3px;
         }
-        
-        .footer__redes span{
-            
-        }
 
         .footer__img img{
             width: 7vh;
@@ -659,7 +792,4 @@ footer a{
             order: 4;
             
         }
-
-
-
 }
