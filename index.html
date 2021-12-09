@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RH Lop - Consultoria en RRHH</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/style.css">
 <body>
    <div id="grilla">
        <!--Cabecera de paginas-->
-        <header>         
+        <header>
             <div class="header__logo">
                 <a href="index.html"><img src="./img/Rh Lop Logo gif.gif" alt="logoAnimado"></a>
             </div>  
-                <h2 class="header__titulo">Rh Lop - Consultoria en RRHH</h2>             
+                <h1 class="header__titulo">Rh Lop - Consultoria en RRHH</h1>             
             <!--Barra de Navegacion-->
                 <nav class="navegacion">
                     <ul class="navegacion__secciones">
@@ -54,28 +55,34 @@
             <section class="clientes">
                 <h2 class="clientes__titulo">Clientes</h2>
                 <div class="clientes__logos">
-                        <img src="./img/logo bosch.png" alt="bosch">
-                        <img src="./img/logo carrefour.png" alt="carrefour">
-                        <img src="./img/logo huawei.jpg" alt="Huawei">
-                        <img src="./img/logo lg.jpg" alt="lg">
-                        <img src="./img/logo coder.png" alt="coder">              
+                    <img src="./img/logo bosch.png" alt="bosch">
+                    <img src="./img/logo carrefour.png" alt="carrefour">
+                    <img src="./img/logo huawei.jpg" alt="Huawei">
+                    <img src="./img/logo lg.jpg" alt="lg">
+                    <img src="./img/logo coder.png" alt="coder">              
                 </div>
             </section>
             <!--Seccion de noticias-->
             <section class="noticias">
-                <article class="noticias__noti1">
-                    <h3>Noticia 1</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque veniam quaerat architecto recusandae fugit asperiores veritatis sit modi ratione numquam.</p>
-                </article>
-                <article class="noticias__noti2">
-                    <h3>Noticia 2</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque veniam quaerat architecto recusandae fugit asperiores veritatis sit modi ratione numquam.</p>
-                </article>
-                <article class="noticias__noti3">
-                    <h3>Noticia 3</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque veniam quaerat architecto recusandae fugit asperiores veritatis sit modi ratione numquam.</p>
-                </article>
-            </section>
+                <div data-aos="fade-in" data-aos-offset="100" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+                    <article class="noticias__noti1">
+                        <h3>Noticia 1</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque veniam quaerat architecto recusandae fugit asperiores veritatis sit modi ratione numquam.</p>
+                    </article>
+                </div>
+                <div data-aos="fade-in" data-aos-offset="100" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+                    <article class="noticias__noti2">
+                        <h3>Noticia 2</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque veniam quaerat architecto recusandae fugit asperiores veritatis sit modi ratione numquam.</p>
+                    </article>
+                </div>
+                <div data-aos="fade-in" data-aos-offset="100" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-bottom">
+                    <article class="noticias__noti3">
+                        <h3>Noticia 3</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque veniam quaerat architecto recusandae fugit asperiores veritatis sit modi ratione numquam.</p>
+                    </article>
+                </div>
+            </section>              
         </div>    
         <!--Footer-->
         <footer>       
@@ -106,7 +113,10 @@
                 </ul>
                 <p class="copyright">© 2021. Para mayor información, consulte nuestros Terminos de Uso</p>
         </footer>
-   </div> 
-
+    </div> 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>   
 </body>
 </html>
