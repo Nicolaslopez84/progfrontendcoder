@@ -193,6 +193,7 @@ header{
     margin: 0.3rem;
     width: 5vh;
     transition: 1s;
+    border-radius: 5px;
 }
 
 .navegacion__redes img:hover{
@@ -475,8 +476,8 @@ header{
     align-items: center;
     justify-content: space-around;
     margin-bottom: 5px;
-
 }
+
 .titulosh1{
     text-align: center;
 }
@@ -486,6 +487,7 @@ header{
     flex-direction: column;
     align-items: flex-start;
     margin: 5px;
+    border: 3px solid black;
 }
 
 input, option, label, select, textarea, legen, legend{
@@ -493,12 +495,45 @@ input, option, label, select, textarea, legen, legend{
 }
 
 .empleos__imagen{
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 45%;
     align-self: center;
     max-width: auto; 
-    max-height: auto;    
+    max-height: auto;
+    -webkit-animation: kenburns-right 5s ease-out both;
+    animation: kenburns-right 5s ease-out both;
+    margin: 1rem;
+    position:absolute;
 }  
+
+@-webkit-keyframes kenburns-right {
+    0% {
+      -webkit-transform: scale(0.5) translate(0, 0);
+              transform: scale(0.5) translate(0, 0);
+      -webkit-transform-origin: 84% 30%;
+              transform-origin: 84% 30%;
+    }
+    100% {
+      -webkit-transform: scale(.75) translateX(20px);
+              transform: scale(.75) translateX(20px);
+      -webkit-transform-origin: right;
+              transform-origin: right;
+    }
+  }
+  @keyframes kenburns-right {
+    0% {
+      -webkit-transform: scale(.5) translate(0, 0);
+              transform: scale(.5) translate(0, 0);
+      -webkit-transform-origin: 84% 30%;
+              transform-origin: 84% 30%;
+    }
+    100% {
+      -webkit-transform: scale(.75) translateX(20px);
+              transform: scale(.75) translateX(20px);
+      -webkit-transform-origin: right;
+              transform-origin: right;
+    }
+  }
 
 .empleos__form__botones{
     margin: 5px;
@@ -523,6 +558,11 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    border: 3px solid black;
+}
+
+legend{
+    font-size: 2rem;
 }
 
 .contacto__botones{
@@ -658,6 +698,13 @@ footer a{
         flex-direction: column;
     }
 
+/* empleos */
+    .empleos__imagen{
+        width: 70%;
+        position: unset;
+        margin-right: 25%;
+    }
+
 
 }
 
@@ -743,8 +790,9 @@ footer a{
       }
 
       .empleos__imagen{
-            width: 90%;
-            margin-top: 5px;
+            width: 70%;
+            position: unset;
+            margin-right: 25%;
       }
 
 /* footer */
