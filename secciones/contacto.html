@@ -62,38 +62,68 @@
         <div class="body__contenido">
             <h1>Contactanos</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi numquam, suscipit possimus magni sit odio voluptate veritatis distinctio soluta, obcaecati amet iste quis sapiente adipisci maiores doloribus est quidem dolore!</p>
-            <nav class="contacto">      
-                <form action="" method="" enctype="">
-                    <fieldset>
-                        <legend>Contactanos</legend>
-                            <p>Para preguntas o solicitudes que requieran una repuesta más personalizada, haremos todo lo posible por contestar alrededor de 48 horas</p>
-                            <p>Los campos marcados con asterisco (*) son obligatorios.</p>
-                        <legen>Nombre *</legen>
-                            <label for="nombre"></label>
-                            <input type="text" name="" id="nombre">                      
-                        <legen>Apellido *</legen>
-                            <label for="apellido"></label>
-                            <input type="text" name="" id="apellido">  
-                        <legen>Email *</legen>
-                            <label for="email"></label>
-                            <input type="text" name="" id="email"> 
-                        <label for="Topis">Topic</label>
-                            <select name="" id="Topic">
-                                <option value=""></option>
-                                <option value="Busquedas">Busquedas</option>
-                                <option value="Capacitacion">Capacitacion</option>
-                                <option value="Payroll">Payroll</option>
-                                <option value="Consultoria">Consultoria</option>
-                            </select>   
-                        <label for="Consulta">Escriba su consulta</label>
-                            <textarea name="consulta" id="" cols="50" rows="10" maxlength="500"></textarea>
-                        <div class="contacto__botones">
-                                <input class="boton" type="submit" value="Enviar">
-                                <input class="boton" type="reset" value="Reestablecer">                   
-                                <input type="checkbox" name="" id="">He leído y aceptado la declaración de privacidad y términos de uso.
+            <nav class="container">
+                <form class="row g-3 m-3">
+                    <div class="col-6 col-md-12">
+                        <label for="inputNombres" class="form-label">Primer Nombre</label>
+                        <input type="text" class="form-control" id="inputApellido" placeholder="Primer Nombre">
+                    </div>
+                    <div class="col-12">
+                      <label for="inputApellido" class="form-label">Apellido</label>
+                      <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                    </div>
+                    <div class="col-md-5">
+                      <label for="inputOrg" class="form-label">Nombre de tu Organizacion</label>
+                      <input type="text" class="form-control" id="inputDomic">
+                    </div>
+                    <div class="col-md-3">
+                      <label for="inputServ" class="form-label">Servicio Buscado</label>
+                      <select id="inputServ" class="form-select">
+                        <option selected>Seleccion</option>
+                        <option selected>Payroll</option>
+                        <option selected>Capacitacion</option>  
+                        <option selected>Otros</option>                      
+                      </select>
+                    </div>
+                    <div class="col-12">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="floatingInputValue" placeholder="usuario@servidor.com" value="usuario@servidor.com">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text bg-primary border-primary text-white">Dejamos tus comentarios</span>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                      </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                          Acepto los terminos y condiciones
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Enviar</button>
+                        <button type="reset" class="btn btn-primary" >Reestablecer</button>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Verifica tus datos para continuar</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <span class="modal-body">
+                                    Antes de Continuar asegurate que tus datos sean correctos para que te podamos agregar a nuestra base de datos
+                                </span>    
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                                    <button type="submit" class="btn btn-primary">Seguro</button>
+                                </div>
+                            </div>
                         </div>
-                    </fieldset>
-                </form>
+                    </div>
+                  </form>
             </nav>
         </div>
         <!--Footer-->
