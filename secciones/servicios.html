@@ -5,43 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RH Lop - Consultoria en Recursos Humanos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div id="grilla">
         <!--Cabecera de paginas-->
-        <header>         
-             <div class="header__logo">
-                 <a href="../index.html"><img src="../img/Rh Lop Logo gif.gif" alt="logoAnimado"></a>
-             </div>  
-                 <h1 class="header__titulo">Rh Lop - Consultoria en RRHH</h1>             
-             <!--Barra de Navegacion-->
-                 <nav class="navegacion">
-                     <ul class="navegacion__secciones">
-                         <li><a href="equipo.html">Equipo</a></li>
-                         <li><a href="servicios.html">Servicios</a></li>
-                         <li><a href="empleos.html">Empleos</a></li>
-                         <li><a href="contacto.html">Contacto</a></li>
-                     </ul>       
-                 </nav> 
-                 <div class="buscador">
-                     <form action="" class="buscador">
-                         <input type="search" placeholder="search">
-                         <button>Buscar</button>
-                      </form>               
-                 </div>
-                 <div class="idioma">
-                     <button>Español</button>
-                     <button>English</button>
-                 </div>
-                 <div class=navegacion__redes>
-                     <img src="../img/icono facebook.png" alt="Facebook" width="20rem">
-                     <img src="../img/icono insta.jpg" alt="instagram" width="20rem">
-                     <img src="../img/icono linkedin.png" alt="linkedin" width="20rem">
-                     <img src="../img/icono wsp.jpg" alt="wsp" width="20rem">
-                 </div>              
-        </header> 
+        <header>
+            <!--Barra de Navegacion-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary navegacion">
+                <div class="container-fluid justify-content-md-start">
+                  <a class="navbar-brand" href="../index.html">
+                        <img class="logo" src="../img/Rh Lop Logo gif.gif" alt="logoAnimado"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll align-items-md-center" style="--bs-scroll-height: 100px;">
+                      <li class="nav-item ps-2">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                      </li>
+                      <li class="nav-item ps-2">
+                        <a class="nav-link" href="equipo.html">Equipo</a>
+                      </li>
+                      <li class="nav-item ps-2">
+                        <a class="nav-link" href="empleos.html">Empleos</a>
+                      </li>
+                      <li class="nav-item ps-2">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                      </li>
+                      <li class="nav-item dropdown ms-5 d-flex">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Idioma
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                          <li><a class="dropdown-item" href="#">Español</a></li>
+                          <li><a class="dropdown-item" href="#">Ingles</a></li>
+                        </ul>
+                      </li>
+                    </ul>      
+                    <form class="d-flex">
+                      <input class="form-control" type="search" placeholder="" aria-label="Search">
+                      <button class="btn btn-outline-primary border border-primary order-md-1" type="submit">Buscar</button>
+                    </form>
+                  </div>
+                </div>
+                <div class=navegacion__redes>
+                    <img src="../img/icono facebook.png" alt="Facebook">
+                    <img src="../img/icono insta.jpg" alt="instagram">
+                    <img src="../img/icono linkedin.png" alt="linkedin">
+                    <img src="../img/icono wsp.jpg" alt="wsp">
+                </div>
+              </nav>                     
+        </header>
         <div class="body__contenido">
             <section class="servicios">
                 <h1 class="titulosh1">Nuestros Servicios</h1>
@@ -104,10 +121,10 @@
             <div class="footer__redes">
                 <h4>Seguinos</h4>   
                 <div class="footer__img">
-                    <span><img src="../img/icono facebook.png" alt="Facebook" width="20px">Facebook</span>
-                    <span><img src="../img/icono insta.jpg" alt="instagram" width="20px">Instragram</span>
-                    <span><img src="../img/icono linkedin.png" alt="linkedin" width="20px">Linkedin</span>
-                    <span><img src="../img/icono wsp.jpg" alt="wsp" width="20px">Whatsapp</span>
+                    <span><img src="../img/icono facebook.png" alt="Facebook" width="20px"></span>
+                    <span><img src="../img/icono insta.jpg" alt="instagram" width="20px"></span>
+                    <span><img src="../img/icono linkedin.png" alt="linkedin" width="20px"></span>
+                    <span><img src="../img/icono wsp.jpg" alt="wsp" width="20px"></span>
                 </div>
             </div>   
             <div class="footer__ubicacion">  
@@ -124,6 +141,8 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
-    </script>  
+    </script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ 
 </body>
 </html>
