@@ -353,32 +353,9 @@ footer a:hover{
     text-align: center;
 }
 
-.servicios__servicio{
-    display: grid;
-    grid-template-areas: "h3 articulo"
-                         "img articulo";
-    align-items: center;
-    justify-items: center;
-    padding: 1rem;                    
-}
-
-.servicios__servicio h3{
-    grid-area: h3;
-    padding: 5px;
-    margin: 5px;
-}
-
-.servicios__servicio img{
-    width: 50vh;
-    grid-area: img;   
-}
-
-.servicios__servicio article{
-    grid-area: articulo;
-    padding: 10px;
+.body__contenido h3{
     text-align: center;
 }
-
 
 /* css de empleos.html */
 .empleos{
@@ -702,4 +679,7 @@ footer a{
             order: 4;
             
         }
+}
+
+
 }
