@@ -1,0 +1,33 @@
+/* css de contacto.html */
+h1 {
+    text-align: center; }
+  
+  .contacto {
+    display: flex;
+    justify-content: center;
+    margin: 5px; }
+  
+  .contacto fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 3px solid black; }
+  
+  legend {
+    font-size: 2rem; }
+  
+  .contacto__botones {
+    display: flex;
+    margin: 3px; }
+  
+  .boton {
+    border-radius: 10px;
+    border: none;
+    background-color: #2E86C1;
+    color: white;
+    margin: 2px;
+    width: 7rem; }
+  
+  .boton:hover {
+    background-color: transparent; }
+  

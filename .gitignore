@@ -1,2 +1,10 @@
 .gitignore
 
+node_modules/
+
+.vscode/
+
+
+*.json
+
+css/respaldostyle.css

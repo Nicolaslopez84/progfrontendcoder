@@ -1,0 +1,99 @@
+  
+  footer {
+    grid-area: footer; 
+  
+    & a:hover {
+        text-decoration: underline; }
+
+        * css del footer */
+        footer {
+          background: #2b2ec7;
+          background: radial-gradient(circle, #2b2ec7 0%, #94bbe9 100%);
+          display: grid;
+          grid-template-areas: "footerNav footerRedes ubicacion"
+         "politicas politicas copyright";
+          justify-items: center;
+          grid-template-columns: auto;
+          grid-template-rows: 3fr 1fr;
+          align-items: center; }
+        
+        footer h4 {
+          color: white;
+          font-size: 25px;
+          text-align: center;
+          margin: 0.5rem; }
+        
+        footer a {
+          color: white;
+          text-decoration: none; }
+        
+        .footer__navegacion {
+          grid-area: footerNav; }
+        
+        .footer__navegacion ul {
+          list-style: none;
+          padding: 0; }
+        
+        .footer__navegacion li {
+          padding: 0.5rem; }
+        
+        .footer__redes {
+          color: white;
+          grid-area: footerRedes; }
+        
+        .footer__redes img {
+          width: 10vh;
+          padding: 5px;
+          border-radius: 10px; }
+        
+        .footer__redes img:hover {
+          transform: skew(-10deg); }
+        
+        .footer__ubicacion {
+          grid-area: ubicacion; }
+        
+        .footer__ubicacion iframe {
+          width: 400px;
+          margin: 5%; }
+        
+        .footer__politicas {
+          grid-area: politicas; }
+        
+        .footer__politicas li {
+          display: inline-block;
+          padding: 10px;
+          list-style: none; }
+        
+        .copyright {
+          color: white;
+          margin: 5px;
+          grid-area: copyright;
+          align-self: center; }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    /* footer */
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+    footer h4 {
+      text-align: center; }
+    .footer__navegacion li {
+      display: inline-block; }
+    .footer__redes {
+      margin: 3px; }
+    .footer__img img {
+      width: 7vh; }
+    .footer__img {
+      display: flex; }
+    .footer__ubicacion iframe {
+      margin: 0 8vh; }
+    .footer__politicas {
+      display: inline-block;
+      order: 5; }
+    .copyright {
+      display: inline-block;
+      order: 4; } }

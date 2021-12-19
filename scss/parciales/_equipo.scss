@@ -1,0 +1,68 @@
+/* css de equipo.html */
+.equipo h1 {
+    text-align: center; }
+  
+  .equipo__empleado {
+    display: grid;
+    grid-template-areas: "nombre presentacion linkredes video"
+   "foto presentacion linkredes video"
+   "cv presentacion linkredes video";
+    grid-template-columns: 1fr 3fr 0.5fr 3fr;
+    grid-template-rows: 1fr 2fr 0.5fr;
+    margin: 2rem;
+    align-items: center; }
+  
+  .equipo__linkredes {
+    grid-area: linkredes;
+    justify-self: center;
+    display: flex;
+    flex-direction: column; }
+  
+  .equipo__linkredes img {
+    width: 7vh;
+    margin: 20px;
+    border-radius: 3px; }
+  
+  .equipo__linkredes img:hover {
+    transform: scale(1.2); }
+  
+  .equipo__fotos {
+    grid-area: foto;
+    max-width: 110%;
+    max-height: 110%;
+    margin: 2px;
+    border-radius: 100px; }
+  
+  .equipo__empleado h3 {
+    grid-area: nombre;
+    text-align: center; }
+  
+  .equipo__empleado article {
+    grid-area: presentacion;
+    margin: 10px;
+    padding-left: 2rem; }
+  
+  .equipo__empleado a {
+    grid-area: cv; }
+  
+  .equipo__video {
+    grid-area: video;
+    max-width: 90%;
+    max-height: 100%; }
+
+    @media screen and (max-width: 768px) {
+ 
+
+        /* equipo */
+        .equipo__empleado {
+          justify-items: center;
+          grid-template-columns: 1fr 3fr;
+          grid-template-areas: "nombre presentacion"
+       "foto presentacion"
+       "linkredes presentacion"
+       "cv presentacion"
+       "video video"; }
+        .equipo__linkredes {
+          flex-direction: row; }
+        .equipo__empleado a {
+          margin-bottom: 5px; }    
