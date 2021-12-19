@@ -1,0 +1,197 @@
+/* css de contacto.html */
+h1 {
+    text-align: center; }
+  
+  .contacto {
+    display: flex;
+    justify-content: center;
+    margin: 5px; }
+  
+  .contacto fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 3px solid black; }
+  
+  legend {
+    font-size: 2rem; }
+  
+  .contacto__botones {
+    display: flex;
+    margin: 3px; }
+  
+  .boton {
+    border-radius: 10px;
+    border: none;
+    background-color: #2E86C1;
+    color: white;
+    margin: 2px;
+    width: 7rem; }
+  
+  .boton:hover {
+    background-color: transparent; }
+ 
+/* css de empleos.html */
+.empleos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 5px; }
+  
+  .titulosh1 {
+    text-align: center; }
+  
+  .empleos__form fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5px;
+    border: 3px solid black; }
+  
+  input, option, label, select, textarea, legen, legend {
+    margin: 2px 3px; }
+  
+  .empleos__imagen {
+    width: 40%;
+    height: 45%;
+    align-self: center;
+    max-width: auto;
+    max-height: auto;
+    -webkit-animation: kenburns-right 5s ease-out both;
+    animation: kenburns-right 5s ease-out both;
+    margin: 1rem;
+    position: absolute; }
+  
+  @-webkit-keyframes kenburns-right {
+    0% {
+      -webkit-transform: scale(0.5) translate(0, 0);
+      transform: scale(0.5) translate(0, 0);
+      -webkit-transform-origin: 84% 30%;
+      transform-origin: 84% 30%; }
+    100% {
+      -webkit-transform: scale(0.75) translateX(20px);
+      transform: scale(0.75) translateX(20px);
+      -webkit-transform-origin: right;
+      transform-origin: right; } }
+  
+  @keyframes kenburns-right {
+    0% {
+      -webkit-transform: scale(0.5) translate(0, 0);
+      transform: scale(0.5) translate(0, 0);
+      -webkit-transform-origin: 84% 30%;
+      transform-origin: 84% 30%; }
+    100% {
+      -webkit-transform: scale(0.75) translateX(20px);
+      transform: scale(0.75) translateX(20px);
+      -webkit-transform-origin: right;
+      transform-origin: right; } }
+  
+  .empleos__form__botones {
+    margin: 5px; }
+  
+  textarea {
+    resize: none; }
+
+/* media queries */
+@media screen and (max-width: 1024px) {
+    /* empleos */
+    .empleos__imagen {
+      width: 70%;
+      position: unset;
+      margin-right: 25%; } }
+
+      @media screen and (max-width: 768px) {
+
+        /* empleos */
+        .empleos {
+          flex-direction: column; }
+        .empleos__imagen {
+          width: 70%;
+          position: unset;
+          margin-right: 25%; }
+
+/* css de equipo.html */
+.equipo h1 {
+    text-align: center; }
+  
+  .equipo__empleado {
+    display: grid;
+    grid-template-areas: "nombre presentacion linkredes video"
+   "foto presentacion linkredes video"
+   "cv presentacion linkredes video";
+    grid-template-columns: 1fr 3fr 0.5fr 3fr;
+    grid-template-rows: 1fr 2fr 0.5fr;
+    margin: 2rem;
+    align-items: center; }
+  
+  .equipo__linkredes {
+    grid-area: linkredes;
+    justify-self: center;
+    display: flex;
+    flex-direction: column; }
+  
+  .equipo__linkredes img {
+    width: 7vh;
+    margin: 20px;
+    border-radius: 3px; }
+  
+  .equipo__linkredes img:hover {
+    transform: scale(1.2); }
+  
+  .equipo__fotos {
+    grid-area: foto;
+    max-width: 110%;
+    max-height: 110%;
+    margin: 2px;
+    border-radius: 100px; }
+  
+  .equipo__empleado h3 {
+    grid-area: nombre;
+    text-align: center; }
+  
+  .equipo__empleado article {
+    grid-area: presentacion;
+    margin: 10px;
+    padding-left: 2rem; }
+  
+  .equipo__empleado a {
+    grid-area: cv; }
+  
+  .equipo__video {
+    grid-area: video;
+    max-width: 90%;
+    max-height: 100%; }
+
+    @media screen and (max-width: 768px) {
+ 
+
+        /* equipo */
+        .equipo__empleado {
+          justify-items: center;
+          grid-template-columns: 1fr 3fr;
+          grid-template-areas: "nombre presentacion"
+       "foto presentacion"
+       "linkredes presentacion"
+       "cv presentacion"
+       "video video"; }
+        .equipo__linkredes {
+          flex-direction: row; }
+        .equipo__empleado a {
+          margin-bottom: 5px; }    
+
+/* css de servicios.html */
+.servicios h1 {
+    text-align: center; }
+  
+  .body__contenido h3 {
+    text-align: center; }
+
+@media screen and (max-width: 768px) {
+
+        /* servicios */
+        .servicios__servicio {
+          grid-template-areas: "h3 img"
+       "articulo articulo"; }
+        .servicios__servicio img {
+          width: 30vh; }
+}

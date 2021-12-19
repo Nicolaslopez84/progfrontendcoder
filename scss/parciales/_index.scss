@@ -1,155 +1,194 @@
-/* css del body de index.html */
-.presentacion__articulo {
-    border: solid 2px black;
-    margin-top: 0.5rem;
-    display: grid;
-    grid-template-columns: 1.5fr 1.5fr;
-    grid-template-rows: auto;
-    grid-template-areas: "presentacionTitulo presentacionTitulo"
-   "presentacionParrafo presentacionVideo";
-    justify-items: center; }
-  
-  .presentacion__titulo {
-    text-align: center;
-    grid-area: presentacionTitulo; }
-  
-  .presentacion__parrafo {
-    margin: 1rem;
-    font-size: 1.2rem;
-    grid-area: presentacionParrafo; }
-  
-  .presentacion__video {
-    grid-area: presentacionVideo;
-    padding: 0 0 5px 0; }
-  
-  .clientes__titulo {
-    text-align: center; }
-  
-  /* animaciones logos clientes */
-  .clientes__logos img {
-    -webkit-animation: bounce-in-fwd 1.1s both;
-    animation: bounce-in-fwd 1.1s both;
-    animation-delay: 1s; }
-  
-  @-webkit-keyframes bounce-in-fwd {
-    0% {
-      -webkit-transform: scale(0);
-      transform: scale(0);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in;
-      opacity: 0; }
-    38% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out;
-      opacity: 1; }
-    55% {
-      -webkit-transform: scale(0.7);
-      transform: scale(0.7);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in; }
-    72% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out; }
-    81% {
-      -webkit-transform: scale(0.84);
-      transform: scale(0.84);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in; }
-    89% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out; }
-    95% {
-      -webkit-transform: scale(0.95);
-      transform: scale(0.95);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in; }
-    100% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out; } }
-  
-  @keyframes bounce-in-fwd {
-    0% {
-      -webkit-transform: scale(0);
-      transform: scale(0);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in;
-      opacity: 0; }
-    38% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out;
-      opacity: 1; }
-    55% {
-      -webkit-transform: scale(0.7);
-      transform: scale(0.7);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in; }
-    72% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out; }
-    81% {
-      -webkit-transform: scale(0.84);
-      transform: scale(0.84);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in; }
-    89% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out; }
-    95% {
-      -webkit-transform: scale(0.95);
-      transform: scale(0.95);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in; }
-    100% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-      animation-timing-function: ease-out; } }
-  
-  .noticias {
-    margin-top: 10px;
-    display: flex; }
-  
-  .noticias h3 {
-    text-align: center; }
-  
-  .noticias article {
-    border: solid 2px black;
-    margin: 1%;
-    text-align: center; }
-  
-  .noticias article p {
-    margin: 0.5rem;
-    font-size: 1.5rem; }
+@import "./vars";
+
+.presentacion{
+
+    &__articulo {
+        border: solid 2px black;
+        margin-top: 0.5rem;
+        display: grid;
+        grid-template-columns: 1.5fr 1.5fr;
+        grid-template-rows: auto;
+        grid-template-areas: "presentacionTitulo presentacionTitulo"
+        "presentacionParrafo presentacionVideo";
+        justify-items: center; 
+    }
+
+    &__titulo {
+        text-align: center;
+        grid-area: presentacionTitulo; 
+    }
     
-    @media screen and (max-width: 768px) {
+    &__parrafo {
+        margin: 1rem;
+        font-size: 1.2rem;
+        grid-area: presentacionParrafo; 
+    }
+    
+    &__video {
+        grid-area: presentacionVideo;
+        padding: 0 0 5px 0; 
+    }
+}
+
+.clientes{
+
+    &__titulo {
+        text-align: center; 
+    }
+
+    /* animaciones logos clientes */
+    &__logos img {
+        -webkit-animation: bounce-in-fwd 1.1s both;
+        animation: bounce-in-fwd 1.1s both;
+        animation-delay: 1s; 
+    }
+  
+    @-webkit-keyframes bounce-in-fwd {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+            opacity: 0; 
+        }
+        38% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+            opacity: 1; 
+        }
+        55% {
+            -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; 
+        }
+        72% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; 
+        }
+        81% {
+            -webkit-transform: scale(0.84);
+            transform: scale(0.84);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; 
+        }
+        89% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; 
+        }
+        95% {
+            -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; 
+        }
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; 
+        } 
+    }
+    
+    @keyframes bounce-in-fwd {
+        0% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+            opacity: 0; 
+        }
+        38% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+            opacity: 1; 
+        }
+        55% {
+            -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; 
+        }
+        72% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; 
+        }
+        81% {
+            -webkit-transform: scale(0.84);
+            transform: scale(0.84);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; 
+        }
+        89% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; 
+        }
+        95% {
+            -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; 
+        }
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; 
+        } 
+    }
+}
+  
+.noticias {
+    margin-top: 10px;
+    display: flex; 
+  
+    & h3 {
+    text-align: center; }
+  
+    & article {
+        border: solid 2px black;
+        margin: 1%;
+        text-align: center; 
+        & p {
+            margin: 0.5rem;
+            font-size: 1.5rem; 
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
  
-        /* index */
-        .presentacion__articulo {
-          display: flex;
-          flex-direction: column;
-          align-items: center; }
-        .noticias {
-          flex-direction: column; }
-        .clientes__logos {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap; }
-        .clientes__logos img {
-          width: auto;
-          height: auto;
-          width: 200px;
-          height: 200px; } 
+    .presentacion__articulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .noticias {
+        flex-direction: column; 
+    }
+
+    .clientes__logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; 
+        & img {
+            width: auto;
+            height: auto;
+            width: 200px;
+            height: 200px; 
+        }
+    }
+}

@@ -5,8 +5,8 @@ header {
 
     .navegacion {
         grid-area: navegacion; 
-        background: color-principal;
-        background: gradiente-fondo; 
+        background: $color-fondo;
+        background: $gradiente-fondo; 
         
         &__redes {
             display: flex;
@@ -29,10 +29,11 @@ header {
     }
         .logo {
             width: 40vh; 
-        }
-}          
+        }         
 
-@media screen and (max-width: 768px) {
-    /* header*/
-    .navegacion__redes {
-      flex-direction: row; }
+    @media screen and (max-width: 768px) {
+
+        .navegacion__redes {
+        flex-direction: row; }
+        }
+}
