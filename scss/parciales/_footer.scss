@@ -1,4 +1,5 @@
 @import "./vars";
+@import "./responsive";
   
 footer {
     background: $color-fondo;
@@ -8,7 +9,12 @@ footer {
     "politicas politicas copyright";
     grid-template-columns: auto;
     grid-template-rows: 3fr 1fr;
-    @include grid-justifyItCenter-alignItCenter; 
+    @include grid-justifyItCenter-alignItCenter;
+    @include tablet{
+      display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
     
     & a {
       color: $color-texto-footer;
@@ -23,7 +29,10 @@ footer {
       color: $color-texto-footer;
       font-size: $size-h4;
       text-align: center;
-      margin: 0.5rem; 
+      margin: 0.5rem;
+      @include tablet{
+        text-align: center;
+      } 
     }
 }
     .footer__navegacion {
@@ -33,6 +42,9 @@ footer {
         padding: 0; 
         & li {
           padding: 0.5rem;
+          @include tablet{
+            display: inline-block; 
+          }
         }
       }
     }
@@ -40,12 +52,24 @@ footer {
     .footer__redes {
       color: $color-texto-footer;
       grid-area: footerRedes;
+      @include tablet{
+        margin: 3px; 
+      }
       & img {
         width: 7vh;
         padding: 5px;
-        border-radius: 15px; 
+        border-radius: 15px;
         &:hover {
           transform: skew(-10deg); 
+        }
+      }
+    }
+
+    .footer__img {
+      @include tablet{
+        display: flex;
+        & img {
+        width: 7vh; 
         }
       }
     }
@@ -54,11 +78,20 @@ footer {
       grid-area: ubicacion; 
       & iframe {
         width: 50vh;
-        margin: 5%; }
+        margin: 5%;
+        @include tablet{
+          margin: 0 8vh;
+        }
+      }
+
     }
 
     .footer__politicas {
-      grid-area: politicas; 
+      grid-area: politicas;
+      @include tablet{
+        display: inline-block;
+        order: 5; 
+      } 
       & li {
         display: inline-block;
         padding: 10px;
@@ -70,45 +103,10 @@ footer {
       color: $color-texto-footer;
       margin: 5px;
       grid-area: copyright;
-      align-self: center; 
+      align-self: center;
+      @include tablet {
+        display: inline-block;
+        order: 4; 
+      } 
     }
 
-@media screen and (max-width: 768px) {
-      footer{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      & h4 {
-        text-align: center; 
-      }
-
-      .footer__navegacion li {
-        display: inline-block; 
-      }
-      .footer__redes {
-        margin: 3px; 
-      }
-
-      .footer__img {
-        display: flex;
-        & img {
-          width: 7vh; 
-        }
-      }
-
-    .footer__ubicacion iframe {
-      margin: 0 8vh; 
-    }
-
-    .footer__politicas {
-      display: inline-block;
-      order: 5; 
-    }
-
-    .copyright {
-      display: inline-block;
-      order: 4; 
-    }   
-  }

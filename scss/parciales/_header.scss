@@ -1,4 +1,5 @@
 @import "./vars";
+@import "./responsive";
 
 header {
     grid-area: header; 
@@ -13,27 +14,23 @@ header {
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            padding: 0 1rem; 
+            padding: 0 1rem;
+            @include tablet{
+                flex-direction: row;
+            }
                 
             & img {
                 margin: 0.3rem;
                 width: 6vh;
                 transition: 1s;
-                   border-radius: 5px; 
-                
+                border-radius: 5px; 
                 &:hover {
                     transform: scale(1.5); 
                 }
             }
         }
     }
-        .logo {
-            width: 40vh; 
-        }         
-
-    @media screen and (max-width: 768px) {
-
-        .navegacion__redes {
-        flex-direction: row; }
-        }
+    .logo {
+        width: 40vh; 
+    }         
 }

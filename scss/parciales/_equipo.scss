@@ -1,84 +1,80 @@
 @import "./vars";
+@import "./responsive";
 
-.equipo h1{
-    text-align: center;
-}
+.equipo {
+    & h1 {
+        text-align: center;
+    }
 
-.equipo__empleado{   
-    grid-template-areas: "nombre presentacion linkredes video"
-                         "foto presentacion linkredes video"
-                         "cv presentacion linkredes video";
-    grid-template-columns: 1fr 3fr 0.5fr 3fr;
-    grid-template-rows: 1fr 2fr 0.5fr;
-    margin: 2rem;    
-    @include grid-justifyItCenter-alignItCenter;
-}
-
-.equipo__linkredes{
-  grid-area: linkredes;
-  justify-self: center;
-  display: flex;
-  flex-direction: column;   
-}
-
-.equipo__linkredes img{
-    width: 7vh;
-    margin: 20px;   
-    border-radius: 3px;
-}
-
-.equipo__linkredes img:hover{
-    transform: scale(1.2);   
-}
-
-.equipo__fotos{
-    grid-area: foto;
-    max-width: 110%;
-    max-height: 110%;
-    margin: 2px;
-    border-radius: 100px;
+    &__empleado{   
+        grid-template-areas: "nombre presentacion linkredes video"
+                            "foto presentacion linkredes video"
+                            "cv presentacion linkredes video";
+        grid-template-columns: 1fr 3fr 0.5fr 3fr;
+        grid-template-rows: 1fr 2fr 0.5fr;
+        margin: 2rem;    
+        @include grid-justifyItCenter-alignItCenter;
+        & h3{
+            grid-area: nombre;
+            text-align: center;
+        }
     
-}
-
-.equipo__empleado h3{
-    grid-area: nombre;
-    text-align: center;
-}
-
-.equipo__empleado article{
-    grid-area: presentacion;
-    margin: 10px;
-    padding-left: 2rem;
-}
-
-.equipo__empleado a{
-    grid-area: cv;
-}
-
-.equipo__video{
-    grid-area: video;
-    max-width: 90%;
-    max-height: 100%;
-}
-
-@media screen and (max-width: 768px){
-
-    .equipo__empleado {
-        justify-items: center;
-        grid-template-columns: 1fr 3fr;   
-        grid-template-areas: "nombre presentacion"
-                              "foto presentacion"
-                              "linkredes presentacion"
-                              "cv presentacion"
-                              "video video";
+        & article{
+            grid-area: presentacion;
+            margin: 10px;
+            padding-left: 2rem;
+        }
+    
+        & a{
+            grid-area: cv;
+            @include tablet{
+                margin-bottom: 5px;
+            }
+        }
+        
+        @include tablet{
+            justify-items: center;
+            grid-template-columns: 1fr 3fr;   
+            grid-template-areas: "nombre presentacion"
+                                "foto presentacion"
+                                "linkredes presentacion"
+                                "cv presentacion"
+                                "video video";
+        }
+        @include movil{
+            display: flex;
+            flex-direction: column;
+        }  
     }
 
-    .equipo__linkredes{
-        flex-direction: row;
+    &__linkredes{
+        grid-area: linkredes;
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+        }
+        & img{
+            width: 7vh;
+            margin: 20px;   
+            border-radius: 3px;
+            &:hover{
+                transform: scale(1.2);   
+            }  
+        }
     }
-
-    .equipo__empleado a{
-        margin-bottom: 5px;
+    &__fotos{
+        grid-area: foto;
+        max-width: 110%;
+        max-height: 110%;
+        margin: 2px;
+        border-radius: 100px;   
     }
-
+    &__video{
+        grid-area: video;
+        max-width: 90%;
+        max-height: 100%;
+    }  
 }
+
