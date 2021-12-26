@@ -1,0 +1,28 @@
+@import "./vars";
+
+
+.btn__empleos {
+	width:200px;
+	background-color:transparent;
+	text-align:center;
+	color:transparent;
+	border-radius:10px;
+	border:1px solid;
+	display: flex;
+	margin: .5rem;
+
+
+    &--aceptar{
+	    @extend .btn__empleos;
+	    background-color:green;
+	    color:white;
+		
+    }
+
+    &--reestablecer{
+	    @extend .btn__empleos;
+	    background-color:red;
+	    color: white;
+		
+    }
+}

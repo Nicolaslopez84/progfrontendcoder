@@ -6,10 +6,9 @@ footer {
     display: grid;
     grid-template-areas: "footerNav footerRedes ubicacion"
     "politicas politicas copyright";
-    justify-items: center;
     grid-template-columns: auto;
     grid-template-rows: 3fr 1fr;
-    align-items: center;  
+    @include grid-justifyItCenter-alignItCenter; 
     
     & a {
       color: $color-texto-footer;

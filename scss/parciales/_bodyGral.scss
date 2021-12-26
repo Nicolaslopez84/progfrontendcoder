@@ -5,18 +5,20 @@ body {
     background: $gradiente-fondo;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 
-  
-    &__contenido {
-        margin: 0.5%; 
-        & p {
-            margin: 10px; 
-        }
+}  
+
+.body__contenido {
+    margin: 0.5%; 
+    & p {
+        margin: 10px; 
+    }
 
     /* animacion para los h */
     & h1, & h2 {
         -webkit-animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
         animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        padding: 1%; 
+        padding: 1%;
+        text-align: center;
     }
   
         @-webkit-keyframes tracking-in-expand-fwd-top {
@@ -46,5 +48,4 @@ body {
                 transform: translateZ(0) translateY(0);
                 opacity: 1; } 
         }
-    }
 }

@@ -2,3 +2,18 @@ $color-fondo: #2b2ec7;
 $gradiente-fondo: radial-gradient(circle, #2b2ec7 0%, #94bbe9 100%);
 $size-h4: 1.5rem; 
 $color-texto-footer: white;
+$estilos: (
+  color: #3673D9,
+  centro: center,
+  tFuente: 1rem,
+  1rem : 1rem
+);
+
+@mixin grid-justifyItCenter-alignItCenter{
+	display:grid;
+	justify-items: center;
+	align-items: center; 
+}
+
+
+
