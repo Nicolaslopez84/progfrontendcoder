@@ -27,6 +27,8 @@
     &__video {
         grid-area: presentacionVideo;
         padding: 0 0 5px 0; 
+        width: 90vh;
+        height: 60vh;
     }
 }
 
@@ -192,3 +194,12 @@
         }
     }
 }
+
+@media (min-width: 320px) and (max-width: 768px){
+    .presentacion__video {
+     width: 90%;
+
+    }
+}
+    
+

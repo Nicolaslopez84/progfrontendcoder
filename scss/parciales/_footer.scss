@@ -13,8 +13,9 @@ footer {
     
     & a {
       color: $color-texto-footer;
-      text-decoration: none; 
-      & :hover {
+      text-decoration: none;
+      list-style: none;
+      &:hover {
         text-decoration: underline; 
       }
     }
@@ -25,39 +26,39 @@ footer {
       text-align: center;
       margin: 0.5rem; 
     }
-
-    &__navegacion {
+}
+    .footer__navegacion {
       grid-area: footerNav;    
       & ul {
         list-style: none;
         padding: 0; 
         & li {
-          padding: 0.5rem; 
+          padding: 0.5rem;
         }
       }
     }
 
-    &__redes {
+    .footer__redes {
       color: $color-texto-footer;
-      grid-area: footerRedes; 
+      grid-area: footerRedes;
       & img {
-        width: 10vh;
+        width: 7vh;
         padding: 5px;
-        border-radius: 10px; 
-        & :hover {
+        border-radius: 15px; 
+        &:hover {
           transform: skew(-10deg); 
         }
       }
     }
 
-    &__ubicacion {
+    .footer__ubicacion {
       grid-area: ubicacion; 
       & iframe {
-        width: 30vh;
+        width: 50vh;
         margin: 5%; }
     }
 
-    &__politicas {
+    .footer__politicas {
       grid-area: politicas; 
       & li {
         display: inline-block;
@@ -73,34 +74,36 @@ footer {
       align-self: center; 
     }
 
-  @media screen and (max-width: 768px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center; 
+@media screen and (max-width: 768px) {
+      footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
       & h4 {
         text-align: center; 
       }
 
-      &__navegacion li {
+      .footer__navegacion li {
         display: inline-block; 
       }
-      &__redes {
+      .footer__redes {
         margin: 3px; 
       }
 
-      &__img {
+      .footer__img {
         display: flex;
         & img {
           width: 7vh; 
         }
       }
 
-    &__ubicacion iframe {
+    .footer__ubicacion iframe {
       margin: 0 8vh; 
     }
 
-    &__politicas {
+    .footer__politicas {
       display: inline-block;
       order: 5; 
     }
@@ -110,4 +113,3 @@ footer {
       order: 4; 
     }   
   }
-}
