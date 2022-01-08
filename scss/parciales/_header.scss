@@ -8,7 +8,9 @@ header {
         grid-area: navegacion; 
         background: $color-fondo;
         background: $gradiente-fondo; 
-        
+        .logo {
+            width: 30vh; 
+        }         
         &__redes {
             display: flex;
             flex-direction: column;
@@ -25,12 +27,9 @@ header {
                 transition: 1s;
                 border-radius: 5px; 
                 &:hover {
-                    transform: scale(1.5); 
+                    transform: scale(1.2); 
                 }
             }
         }
-    }
-    .logo {
-        width: 40vh; 
-    }         
+    } 
 }

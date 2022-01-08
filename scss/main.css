@@ -13,6 +13,10 @@ header .navegacion {
   background: radial-gradient(circle, #2b2ec7 0%, #94bbe9 100%);
 }
 
+header .navegacion .logo {
+  width: 30vh;
+}
+
 header .navegacion__redes {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,12 +51,8 @@ header .navegacion__redes img {
 }
 
 header .navegacion__redes img:hover {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-}
-
-header .logo {
-  width: 40vh;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 body {
@@ -252,6 +252,7 @@ footer h4 {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
+    padding-left: 0;
   }
 }
 
@@ -278,6 +279,7 @@ footer h4 {
     -webkit-box-ordinal-group: 5;
         -ms-flex-order: 4;
             order: 4;
+    margin-left: 20px;
   }
 }
 
@@ -514,11 +516,25 @@ footer h4 {
   }
 }
 
-.botones__form {
-  background-color: #3673D9;
+.botones__form, .botones__form--aceptar, .botones__form--reestablecer {
+  width: 200px;
+  background-color: transparent;
   text-align: center;
-  padding: 1rem;
-  font-size: 1rem;
+  color: transparent;
+  border-radius: 10px;
+  border: 1px solid;
+  display: inline;
+  margin: .5rem;
+}
+
+.botones__form--aceptar {
+  background-color: green;
+  color: white;
+}
+
+.botones__form--reestablecer {
+  background-color: red;
+  color: white;
 }
 
 .btn__empleos, .btn__empleos--aceptar, .btn__empleos--reestablecer {

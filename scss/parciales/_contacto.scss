@@ -1,10 +1,28 @@
 @import "./vars";
 
 .botones__form {
-    
-    background-color: map-get($estilos, color);
-    text-align: map-get($estilos, centro);
-    padding: map-get($estilos, 1rem);
-    font-size:map-get($estilos, tFuente);
-  }
+	width:200px;
+	background-color:transparent;
+	text-align:center;
+	color:transparent;
+	border-radius:10px;
+	border: 1px solid;
+	display: inline;
+	margin: .5rem;
+
+
+    &--aceptar{
+	    @extend .botones__form;
+	    background-color:green;
+	    color:white;
+		
+    }
+
+    &--reestablecer{
+	    @extend .botones__form;
+	    background-color:red;
+	    color: white;
+		
+    }
+}
   

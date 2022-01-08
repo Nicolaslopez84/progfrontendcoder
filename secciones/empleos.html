@@ -14,14 +14,14 @@
         <header>
             <!--Barra de Navegacion-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary navegacion">
-                <div class="container-fluid justify-content-md-start">
-                  <a class="navbar-brand" href="../index.html">
+              <div class="container-fluid justify-content-md-start justify-content-start">
+                <a class="navbar-brand" href="../index.html">
                         <img class="logo" src="../img/Rh Lop Logo gif.gif" alt="logoAnimado"></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll align-items-md-center" style="--bs-scroll-height: 100px;">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll align-items-md-center" style="--bs-scroll-height: 300px;">
                       <li class="nav-item ps-2">
                         <a class="nav-link" href="servicios.html">Servicios</a>
                       </li>
@@ -63,11 +63,11 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea rerum consequatur maiores voluptas aut sint dolore accusamus doloribus? Commodi ipsa nisi obcaecati officia quasi, voluptatem sed autem deleniti beatae numquam.</p>   
             <nav class="container">
                 <form class="row g-3 m-3">
-                    <div class="col-6 col-md-12">
+                    <div class="col-md-6">
                         <label for="inputNombres" class="form-label">Primer Nombre</label>
                         <input type="text" class="form-control" id="inputApellido" placeholder="Primer Nombre">
                     </div>
-                    <div class="col-6 col-md-12">
+                    <div class="col-md-6">
                         <label for="inputNombres" class="form-label">Segundo Nombre</label>
                         <input type="text" class="form-control" id="inputApellido" placeholder="Segundo Nombre">
                     </div>
@@ -79,7 +79,7 @@
                       <label for="inputDomicilio" class="form-label">Domicilio</label>
                       <input type="text" class="form-control" id="inputDomic">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                       <label for="inputProv" class="form-label">Provincia</label>
                       <select id="inputProv" class="form-select">
                         <option selected>Buenos Aires</option>
@@ -89,7 +89,7 @@
                         <option selected>...</option>                        
                       </select>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                       <label for="inputCP" class="form-label">C.P.</label>
                       <input type="text" class="form-control" id="inputCP">
                     </div>
@@ -97,10 +97,10 @@
                         <label for="inputEmail" class="form-label">Email</label>
                         <input type="email" class="form-control" id="floatingInputValue" placeholder="usuario@servidor.com" value="usuario@servidor.com">
                     </div>
-                    <div class="input-group">
-                        <span class="input-group-text bg-primary border-primary text-white">Agrega tu CV</span>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                      </div>
+                    <div class="form-floating mt-4">
+                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px"></textarea>
+                      <label for="floatingTextarea">Copia y Pega tu CV</label>
+                    </div>
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck">

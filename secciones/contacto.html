@@ -14,14 +14,14 @@
         <header>
             <!--Barra de Navegacion-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary navegacion">
-                <div class="container-fluid justify-content-md-start">
-                  <a class="navbar-brand" href="../index.html">
+              <div class="container-fluid justify-content-md-start justify-content-start">
+                <a class="navbar-brand" href="../index.html">
                         <img class="logo" src="../img/Rh Lop Logo gif.gif" alt="logoAnimado"></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll align-items-md-center" style="--bs-scroll-height: 100px;">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll align-items-md-center" style="--bs-scroll-height: 300px;">
                       <li class="nav-item ps-2">
                         <a class="nav-link" href="servicios.html">Servicios</a>
                       </li>
@@ -64,7 +64,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi numquam, suscipit possimus magni sit odio voluptate veritatis distinctio soluta, obcaecati amet iste quis sapiente adipisci maiores doloribus est quidem dolore!</p>
             <nav class="container">
                 <form class="row g-3 m-3">
-                    <div class="col-6 col-md-12">
+                    <div class="col-12">
                         <label for="inputNombres" class="form-label">Primer Nombre</label>
                         <input type="text" class="form-control" id="inputApellido" placeholder="Primer Nombre">
                     </div>
@@ -72,11 +72,11 @@
                       <label for="inputApellido" class="form-label">Apellido</label>
                       <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                       <label for="inputOrg" class="form-label">Nombre de tu Organizacion</label>
                       <input type="text" class="form-control" id="inputDomic">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="inputServ" class="form-label">Servicio Buscado</label>
                       <select id="inputServ" class="form-select">
                         <option selected>Seleccion</option>
@@ -89,10 +89,10 @@
                         <label for="inputEmail" class="form-label">Email</label>
                         <input type="email" class="form-control" id="floatingInputValue" placeholder="usuario@servidor.com" value="usuario@servidor.com">
                     </div>
-                    <div class="input-group">
-                        <span class="input-group-text bg-primary border-primary text-white">Dejamos tus comentarios</span>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                      </div>
+                    <div class="form-floating mt-4">
+                      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 100px"></textarea>
+                      <label for="floatingTextarea">Dejanos tus comentarios</label>
+                    </div>
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -102,8 +102,8 @@
                       </div>
                     </div>
                     <div class="col-12 botones">
-                        <button type="button" class="btn botones__form" data-bs-toggle="modal" data-bs-target="#exampleModal">Enviar</button>
-                        <button type="reset" class="btn botones__form" >Reestablecer</button>
+                        <button type="button" class="btn botones__form--aceptar" data-bs-toggle="modal" data-bs-target="#exampleModal">Enviar</button>
+                        <button type="reset" class="btn botones__form--reestablecer" >Reestablecer</button>
                     </div>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

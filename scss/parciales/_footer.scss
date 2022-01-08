@@ -90,7 +90,8 @@ footer {
       grid-area: politicas;
       @include tablet{
         display: inline-block;
-        order: 5; 
+        order: 5;
+        padding-left: 0; 
       } 
       & li {
         display: inline-block;
@@ -106,7 +107,8 @@ footer {
       align-self: center;
       @include tablet {
         display: inline-block;
-        order: 4; 
+        order: 4;
+        margin-left: 20px;
       } 
     }
 
