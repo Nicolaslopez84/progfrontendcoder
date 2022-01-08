@@ -523,15 +523,7 @@ footer h4 {
   color: transparent;
   border-radius: 10px;
   border: 1px solid;
-  display: inline;
   margin: .5rem;
-}
-
-@media screen and (max-width: 768px) {
-  .botones__form, .botones__form--aceptar, .botones__form--reestablecer {
-    -ms-flex-line-pack: center;
-        align-content: center;
-  }
 }
 
 .botones__form--aceptar {
@@ -540,29 +532,6 @@ footer h4 {
 }
 
 .botones__form--reestablecer {
-  background-color: red;
-  color: white;
-}
-
-.btn__empleos, .btn__empleos--aceptar, .btn__empleos--reestablecer {
-  width: 200px;
-  background-color: transparent;
-  text-align: center;
-  color: transparent;
-  border-radius: 10px;
-  border: 1px solid;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: .5rem;
-}
-
-.btn__empleos--aceptar {
-  background-color: green;
-  color: white;
-}
-
-.btn__empleos--reestablecer {
   background-color: red;
   color: white;
 }
