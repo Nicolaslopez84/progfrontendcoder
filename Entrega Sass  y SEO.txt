@@ -1,4 +1,0 @@
-Roger, te aclaro lo que hice, agregue un mapa para los botones de contacto.html, ademas realice un extend para los botones de empleos.html y luego use el mixin 
-grid-justifyItCenter-alignItCenter en el footer y en equipo.html. Me quedo pendiente ordenar aplicar el orden de Sass en las Equipo y Servicios.
-
-Con respecto a SEO agregue la descripcion y keywords en el index
