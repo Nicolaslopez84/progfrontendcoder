@@ -527,6 +527,13 @@ footer h4 {
   margin: .5rem;
 }
 
+@media screen and (max-width: 768px) {
+  .botones__form, .botones__form--aceptar, .botones__form--reestablecer {
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
 .botones__form--aceptar {
   background-color: green;
   color: white;

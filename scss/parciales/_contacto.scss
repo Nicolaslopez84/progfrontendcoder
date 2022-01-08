@@ -9,6 +9,9 @@
 	border: 1px solid;
 	display: inline;
 	margin: .5rem;
+  @include tablet{
+    align-content: center;
+  }
 
 
     &--aceptar{
