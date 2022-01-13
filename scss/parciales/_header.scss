@@ -2,23 +2,25 @@
 @import "./responsive";
 
 header {
-    grid-area: header; 
+    grid-area: header;
 
     .navegacion {
         grid-area: navegacion; 
         background: $color-fondo;
         background: $gradiente-fondo; 
         .logo {
-            width: 30vh; 
+            width: 40vh; 
         }         
         &__redes {
-            display: flex;
-            flex-direction: column;
+            display: flex;            
             justify-content: space-around;
             align-items: center;
             padding: 0 1rem;
             @include tablet{
                 flex-direction: row;
+            }
+            @include laptop{
+                flex-wrap: wrap;
             }
                 
             & img {

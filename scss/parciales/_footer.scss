@@ -78,7 +78,10 @@ footer {
       grid-area: ubicacion; 
       & iframe {
         width: 50vh;
-        margin: 5%;
+        @include movil{
+          width: 45vh;
+        }
+        margin: 1rem;
         @include tablet{
           margin: 0 8vh;
         }

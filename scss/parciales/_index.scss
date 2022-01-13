@@ -21,7 +21,8 @@
 
     &__titulo {
         text-align: center;
-        grid-area: presentacionTitulo; 
+        grid-area: presentacionTitulo;
+        padding: 1rem; 
     }
     
     &__parrafo {
@@ -29,145 +30,48 @@
         font-size: 1.2rem;
         grid-area: presentacionParrafo; 
     }
+
+    &__beneficios{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        & li{
+            padding: 1rem;
+            display: inline-block;
+            @include tablet{
+                flex-direction: column;
+            }  
+        }
+    }
     
     &__video {
         grid-area: presentacionVideo;
-        padding: 0 0 5px 0; 
-        width: 90vh;
-        height: 60vh;
+        padding: 0.5rem;
+        width: 100vh;
+        height: 80vh;
+        @include laptop{
+            width: 70vh;
+        }
+            
+        align-self: center;
     }
 }
 
 .clientes{
-    &__titulo {
-        text-align: center; 
+    & img{
+       width: 40vh;
     }
-    /* animaciones logos clientes */
-    &__logos{
-        @include tablet{
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; 
-        }
-        & img {
-            -webkit-animation: bounce-in-fwd 1.1s both;
-            animation: bounce-in-fwd 1.1s both;
-            animation-delay: 1s;
-            @-webkit-keyframes bounce-in-fwd {
-                0% {
-                    -webkit-transform: scale(0);
-                    transform: scale(0);
-                    -webkit-animation-timing-function: ease-in;
-                    animation-timing-function: ease-in;
-                    opacity: 0; 
-                }
-                38% {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-animation-timing-function: ease-out;
-                    animation-timing-function: ease-out;
-                    opacity: 1; 
-                }
-                55% {
-                    -webkit-transform: scale(0.7);
-                    transform: scale(0.7);
-                    -webkit-animation-timing-function: ease-in;
-                    animation-timing-function: ease-in; 
-                }
-                72% {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-animation-timing-function: ease-out;
-                    animation-timing-function: ease-out; 
-                }
-                81% {
-                    -webkit-transform: scale(0.84);
-                    transform: scale(0.84);
-                    -webkit-animation-timing-function: ease-in;
-                    animation-timing-function: ease-in; 
-                }
-                89% {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-animation-timing-function: ease-out;
-                    animation-timing-function: ease-out; 
-                }
-                95% {
-                    -webkit-transform: scale(0.95);
-                    transform: scale(0.95);
-                    -webkit-animation-timing-function: ease-in;
-                    animation-timing-function: ease-in; 
-                }
-                100% {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-animation-timing-function: ease-out;
-                    animation-timing-function: ease-out; 
-                } 
-            }
-            @keyframes bounce-in-fwd {
-                0% {
-                    -webkit-transform: scale(0);
-                    transform: scale(0);
-                    -webkit-animation-timing-function: ease-in;
-                    animation-timing-function: ease-in;
-                    opacity: 0; 
-                }
-                38% {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-animation-timing-function: ease-out;
-                    animation-timing-function: ease-out;
-                    opacity: 1; 
-                }
-                55% {
-                    -webkit-transform: scale(0.7);
-                    transform: scale(0.7);
-                    -webkit-animation-timing-function: ease-in;
-                    animation-timing-function: ease-in; 
-                }
-                72% {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-animation-timing-function: ease-out;
-                    animation-timing-function: ease-out; 
-                }
-                81% {
-                    -webkit-transform: scale(0.84);
-                    transform: scale(0.84);
-                    -webkit-animation-timing-function: ease-in;
-                    animation-timing-function: ease-in; 
-                }
-                89% {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-animation-timing-function: ease-out;
-                    animation-timing-function: ease-out; 
-                }
-                95% {
-                    -webkit-transform: scale(0.95);
-                    transform: scale(0.95);
-                    -webkit-animation-timing-function: ease-in;
-                    animation-timing-function: ease-in; 
-                }
-                100% {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-animation-timing-function: ease-out;
-                    animation-timing-function: ease-out; 
-                } 
-            }
-            @include tablet{
-                width: auto;
-                height: auto;
-                width: 200px;
-                height: 200px;
-            }
-        }
+    &__titulo {
+        text-align: center;
+        padding: 1rem;
+        
     }
 }
   
 .noticias {
+  
+}
+    /*
     margin-top: 10px;
     display: flex;
     @include tablet{
@@ -185,11 +89,12 @@
             font-size: 1.5rem; 
         }
     }
-}
+}*/
 
 @media (min-width: 320px) and (max-width: 768px){
     .presentacion__video {
      width: 90%;
+     
     }
 }
     

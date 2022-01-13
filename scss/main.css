@@ -14,17 +14,13 @@ header .navegacion {
 }
 
 header .navegacion .logo {
-  width: 30vh;
+  width: 40vh;
 }
 
 header .navegacion__redes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -39,6 +35,13 @@ header .navegacion__redes {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  header .navegacion__redes {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -155,7 +158,7 @@ footer a:hover {
 
 footer h4 {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
   margin: 0.5rem;
 }
@@ -230,7 +233,13 @@ footer h4 {
 
 .footer__ubicacion iframe {
   width: 50vh;
-  margin: 5%;
+  margin: 1rem;
+}
+
+@media screen and (max-width: 425px) {
+  .footer__ubicacion iframe {
+    width: 45vh;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -317,6 +326,7 @@ footer h4 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: presentacionTitulo;
+  padding: 1rem;
 }
 
 .presentacion__parrafo {
@@ -327,167 +337,24 @@ footer h4 {
   grid-area: presentacionParrafo;
 }
 
-.presentacion__video {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: presentacionVideo;
-  padding: 0 0 5px 0;
-  width: 90vh;
-  height: 60vh;
-}
-
-.clientes {
-  /* animaciones logos clientes */
-}
-
-.clientes__titulo {
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .clientes__logos {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-}
-
-.clientes__logos img {
-  -webkit-animation: bounce-in-fwd 1.1s both;
-  animation: bounce-in-fwd 1.1s both;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-
-@-webkit-keyframes bounce-in-fwd {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  38% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    -webkit-transform: scale(0.7);
-    transform: scale(0.7);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  72% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  81% {
-    -webkit-transform: scale(0.84);
-    transform: scale(0.84);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  89% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  95% {
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-}
-
-@keyframes bounce-in-fwd {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  38% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    -webkit-transform: scale(0.7);
-    transform: scale(0.7);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  72% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  81% {
-    -webkit-transform: scale(0.84);
-    transform: scale(0.84);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  89% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  95% {
-    -webkit-transform: scale(0.95);
-    transform: scale(0.95);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .clientes__logos img {
-    width: auto;
-    height: auto;
-    width: 200px;
-    height: 200px;
-  }
-}
-
-.noticias {
-  margin-top: 10px;
+.presentacion__beneficios {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.presentacion__beneficios li {
+  padding: 1rem;
+  display: inline-block;
 }
 
 @media screen and (max-width: 768px) {
-  .noticias {
+  .presentacion__beneficios li {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -495,21 +362,52 @@ footer h4 {
   }
 }
 
-.noticias h3 {
+.presentacion__video {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: presentacionVideo;
+  padding: 0.5rem;
+  width: 100vh;
+  height: 80vh;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .presentacion__video {
+    width: 70vh;
+  }
+}
+
+.clientes img {
+  width: 40vh;
+}
+
+.clientes__titulo {
   text-align: center;
+  padding: 1rem;
 }
 
-.noticias article {
-  border: solid 2px black;
-  margin: 1%;
-  text-align: center;
-}
-
-.noticias article p {
-  margin: 0.5rem;
-  font-size: 1.5rem;
-}
-
+/*
+    margin-top: 10px;
+    display: flex;
+    @include tablet{
+        flex-direction: column; 
+    }
+    & h3 {
+    text-align: center; 
+    }
+    & article {
+        border: solid 2px black;
+        margin: 1%;
+        text-align: center; 
+        & p {
+            margin: 0.5rem;
+            font-size: 1.5rem; 
+        }
+    }
+}*/
 @media (min-width: 320px) and (max-width: 768px) {
   .presentacion__video {
     width: 90%;
