@@ -5,10 +5,10 @@ footer {
     background: $color-fondo;
     background: $gradiente-fondo;
     display: grid;
-    grid-template-areas: "footerNav footerRedes ubicacion"
-    "politicas politicas copyright";
-    grid-template-columns: auto;
-    grid-template-rows: 3fr 1fr;
+    grid-template-areas: "footerNav ubicacion ubicacion"
+                          "footerRedes politicas copyright";
+    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-rows: 1fr 7rem;
     @include grid-justifyItCenter-alignItCenter;
     @include tablet{
       display: flex;
@@ -29,7 +29,7 @@ footer {
       color: $color-texto-footer;
       font-size: $size-h4;
       text-align: center;
-      margin: 0.5rem;
+      margin: 1rem;
       @include tablet{
         text-align: center;
       } 
@@ -52,10 +52,11 @@ footer {
     .footer__redes {
       color: $color-texto-footer;
       grid-area: footerRedes;
+      padding-left: 0.5rem;
       @include tablet{
         margin: 3px; 
       }
-      & img {
+      & img {     
         width: 7vh;
         padding: 5px;
         border-radius: 15px;
@@ -66,6 +67,8 @@ footer {
     }
 
     .footer__img {
+      display: flex;
+      flex-direction: row;
       @include tablet{
         display: flex;
         & img {
@@ -77,7 +80,8 @@ footer {
     .footer__ubicacion {
       grid-area: ubicacion; 
       & iframe {
-        width: 50vh;
+        width: 100vh;
+        height: 20vh;
         @include movil{
           width: 45vh;
         }
@@ -91,10 +95,14 @@ footer {
 
     .footer__politicas {
       grid-area: politicas;
+      align-self: flex-end;
+
       @include tablet{
         display: inline-block;
         order: 5;
-        padding-left: 0; 
+        padding-left: 0;
+        margin: 0;
+        align-self: center;
       } 
       & li {
         display: inline-block;
@@ -107,11 +115,13 @@ footer {
       color: $color-texto-footer;
       margin: 5px;
       grid-area: copyright;
-      align-self: center;
+      align-self:flex-end;
+      text-align: center;
       @include tablet {
         display: inline-block;
         order: 4;
         margin-left: 20px;
+        align-self: center;
       } 
     }
 
