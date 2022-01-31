@@ -1,5 +1,5 @@
-$color-fondo: #2b2ec7;
-$gradiente-fondo: radial-gradient(circle, #2b2ec7 0%, #94bbe9 100%);
+$color-fondo: #b3b4f0;
+$gradiente-fondo: linear-gradient(90deg, rgba(30,52,110,1) 4%, rgba(65,63,142,1) 11%, rgba(9,9,121,1) 33%, rgba(28,147,213,1) 84%);
 $size-h4: 1rem; 
 $color-texto-footer: white;
 $estilos: (
@@ -8,6 +8,7 @@ $estilos: (
   tFuente: 1rem,
   1rem : 1rem
 );
+
 @mixin grid-justifyItCenter-alignItCenter{
 	display:grid;
 	justify-items: center;

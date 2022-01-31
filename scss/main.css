@@ -9,8 +9,9 @@ header {
 
 header .navegacion {
   grid-area: navegacion;
-  background: #2b2ec7;
-  background: radial-gradient(circle, #2b2ec7 0%, #94bbe9 100%);
+  background: #b3b4f0 !important;
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, #1e346e), color-stop(11%, #413f8e), color-stop(33%, #090979), color-stop(84%, #1c93d5)) !important;
+  background: linear-gradient(90deg, #1e346e 4%, #413f8e 11%, #090979 33%, #1c93d5 84%) !important;
 }
 
 header .navegacion .logo {
@@ -58,17 +59,18 @@ header .navegacion__redes img:hover {
           transform: scale(1.2);
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Fondo del sitio*/
 body {
-  background: #2b2ec7;
-  background: radial-gradient(circle, #2b2ec7 0%, #94bbe9 100%);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #b3b4f0;
+  font-family: Oswald;
 }
 
 .body__contenido {
-  /* margin: 0.5%; 
-    & p {
-        margin: 10px; 
-    }*/
   /* animacion para los h */
 }
 
@@ -114,20 +116,20 @@ body {
 }
 
 footer {
-  background: #2b2ec7;
-  background: radial-gradient(circle, #2b2ec7 0%, #94bbe9 100%);
+  background: #b3b4f0;
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, #1e346e), color-stop(11%, #413f8e), color-stop(33%, #090979), color-stop(84%, #1c93d5));
+  background: linear-gradient(90deg, #1e346e 4%, #413f8e 11%, #090979 33%, #1c93d5 84%);
   display: -ms-grid;
-  display: grid;
-      grid-template-areas: "footerNav ubicacion ubicacion" "footerRedes politicas copyright";
-  -ms-grid-columns: 1fr 3fr 2fr;
-      grid-template-columns: 1fr 3fr 2fr;
-  -ms-grid-rows: 1fr 7rem;
-      grid-template-rows: 1fr 7rem;
   display: grid;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+      grid-template-areas: "footerNav ubicacion ubicacion" "footerRedes politicas copyright";
+  -ms-grid-columns: 1fr 3fr 2fr;
+      grid-template-columns: 1fr 3fr 2fr;
+  -ms-grid-rows: 1fr 7rem;
+      grid-template-rows: 1fr 7rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -313,16 +315,19 @@ footer h4 {
 }
 
 .presentacion__articulo {
-  border: solid 2px black;
-  margin-top: 0.5rem;
-  display: -ms-grid;
-  display: grid;
+  border: solid 5px black;
+  margin: 0.5rem;
   -ms-grid-columns: 1.5fr 1.5fr;
       grid-template-columns: 1.5fr 1.5fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
       grid-template-areas: "presentacionTitulo presentacionTitulo" "presentacionParrafo presentacionVideo";
+  display: -ms-grid;
+  display: grid;
   justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -350,27 +355,26 @@ footer h4 {
 }
 
 .presentacion__parrafo {
-  margin: 1rem;
-  font-size: 1.2rem;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: presentacionParrafo;
 }
 
+.presentacion__parrafo p {
+  margin: 1rem;
+  text-align: start;
+  font-size: 1.2rem;
+}
+
 .presentacion__beneficios {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  padding: 0;
 }
 
 .presentacion__beneficios li {
-  padding: 1rem;
-  display: inline-block;
+  padding: 0.3rem;
+  list-style: none;
+  display: block;
+  font-size: 1.2rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -409,25 +413,6 @@ footer h4 {
   padding: 1rem;
 }
 
-/*
-    margin-top: 10px;
-    display: flex;
-    @include tablet{
-        flex-direction: column; 
-    }
-    & h3 {
-    text-align: center; 
-    }
-    & article {
-        border: solid 2px black;
-        margin: 1%;
-        text-align: center; 
-        & p {
-            margin: 0.5rem;
-            font-size: 1.5rem; 
-        }
-    }
-}*/
 @media (min-width: 320px) and (max-width: 768px) {
   .presentacion__video {
     width: 90%;
@@ -484,9 +469,9 @@ p {
       grid-template-rows: 1fr 2fr 0.5fr;
   margin: 3rem;
   border-top: 10px solid transparent;
-  -o-border-image: linear-gradient(90deg, #3a4bb4 0%, #1de1fd 50%, #7f45fc 100%) 1;
-     border-image: -webkit-gradient(linear, left top, right top, from(#3a4bb4), color-stop(50%, #1de1fd), to(#7f45fc)) 1;
-     border-image: linear-gradient(90deg, #3a4bb4 0%, #1de1fd 50%, #7f45fc 100%) 1;
+  -o-border-image: linear-gradient(90deg, #1e346e 4%, #413f8e 11%, #090979 33%, #1c93d5 84%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, color-stop(4%, #1e346e), color-stop(11%, #413f8e), color-stop(33%, #090979), color-stop(84%, #1c93d5)) 1;
+     border-image: linear-gradient(90deg, #1e346e 4%, #413f8e 11%, #090979 33%, #1c93d5 84%) 1;
   display: -ms-grid;
   display: grid;
   justify-items: center;
@@ -508,7 +493,7 @@ p {
   -ms-grid-column: 2;
   grid-area: presentacion;
   margin: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .equipo__empleado a {

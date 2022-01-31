@@ -4,14 +4,13 @@
 .presentacion{
 
     &__articulo {
-        border: solid 2px black;
-        margin-top: 0.5rem;
-        display: grid;
+        border: solid 5px black;
+        margin: 0.5rem;
         grid-template-columns: 1.5fr 1.5fr;
         grid-template-rows: auto;
         grid-template-areas: "presentacionTitulo presentacionTitulo"
         "presentacionParrafo presentacionVideo";
-        justify-items: center;
+        @include grid-justifyItCenter-alignItCenter;
         @include tablet{
             display: flex;
             flex-direction: column;
@@ -26,18 +25,21 @@
     }
     
     &__parrafo {
-        margin: 1rem;
-        font-size: 1.2rem;
+        & p{
+            margin: 1rem;
+            text-align: start;
+            font-size: 1.2rem;
+        }
         grid-area: presentacionParrafo; 
     }
 
     &__beneficios{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        padding: 0;
         & li{
-            padding: 1rem;
-            display: inline-block;
+            padding: 0.3rem;
+            list-style: none;
+            display:block;
+            font-size: 1.2rem;
             @include tablet{
                 flex-direction: column;
             }  
@@ -51,8 +53,7 @@
         height: 80vh;
         @include laptop{
             width: 70vh;
-        }
-            
+        }     
         align-self: center;
     }
 }
@@ -68,33 +69,9 @@
     }
 }
   
-.noticias {
-  
-}
-    /*
-    margin-top: 10px;
-    display: flex;
-    @include tablet{
-        flex-direction: column; 
-    }
-    & h3 {
-    text-align: center; 
-    }
-    & article {
-        border: solid 2px black;
-        margin: 1%;
-        text-align: center; 
-        & p {
-            margin: 0.5rem;
-            font-size: 1.5rem; 
-        }
-    }
-}*/
-
 @media (min-width: 320px) and (max-width: 768px){
     .presentacion__video {
-     width: 90%;
-     
+     width: 90%;   
     }
 }
     

@@ -21,14 +21,11 @@ p{
 	border-radius:10px;
 	border: 1px solid;
 	margin: .5rem;
-
     &--aceptar{
 	    @extend .botones__form;
 	    background-color:green;
 	    color:white;
-		
     }
-
     &--reestablecer{
 	    @extend .botones__form;
 	    background-color:red;

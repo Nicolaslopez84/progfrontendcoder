@@ -1,18 +1,13 @@
 @import "./vars";
+@import "./reset";
 
+/* Fondo del sitio*/
 body {
     background: $color-fondo;
-    background: $gradiente-fondo;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-
+    font-family: Oswald; 
 }  
 
 .body__contenido {
-   /* margin: 0.5%; 
-    & p {
-        margin: 10px; 
-    }*/
-
     /* animacion para los h */
     & h1, & h2 {
         -webkit-animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;

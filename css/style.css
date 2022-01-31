@@ -190,8 +190,8 @@ h1 {
 
         /* servicios */
         .servicios__servicio {
-          grid-template-areas: "h3 img"
-       "articulo articulo"; }
+          grid-template-areas: "h3 img articulo articulo";
+         }
         .servicios__servicio img {
           width: 30vh; }
 }

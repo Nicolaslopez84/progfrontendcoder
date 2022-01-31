@@ -6,8 +6,8 @@ header {
 
     .navegacion {
         grid-area: navegacion; 
-        background: $color-fondo;
-        background: $gradiente-fondo; 
+        background: $color-fondo!important;
+        background: $gradiente-fondo !important;
         .logo {
             width: 40vh; 
         }         
