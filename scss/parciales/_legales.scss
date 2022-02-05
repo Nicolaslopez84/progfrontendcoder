@@ -1,0 +1,9 @@
+@import "./vars";
+
+.legal__parrafo{
+    text-align: start;
+    margin: 1rem;
+    & li{
+        list-style:upper-roman;
+    }
+}
