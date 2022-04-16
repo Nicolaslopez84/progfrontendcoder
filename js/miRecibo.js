@@ -1,25 +1,4 @@
 
-let login = prompt("hola! Queres loguearte? S/N");
-let usuario = "";
-
-if(login == "s"){
-    usuario = prompt ("Hola!Ingresa tu nombre");
-    let clave = prompt ("Ahora ingresa tu clave");
-    if(usuario == "nicolas" && clave == "12345"){    
-        alert("Bienvenido "+ usuario);
-    }else{    
-        for(let i = 2 ; i>= 1; i--){
-            alert("ingresaste mal tus datos, te quedan " + i + " intentos");
-            usuario = prompt ("Hola!Ingresa tu usuario");
-            clave = prompt ("Ahora ingresa tu clave");
-                if(usuario == "nicolas" && clave == "12345"){
-                    alert("Bienvenido " + usuario);
-                break;
-                };
-        };
-    };
-};
-
 let basico = 0;
 let valorExtras = 0;
 let sueldoBruto = 0;
@@ -39,38 +18,29 @@ class Sueldo{
     calculohs(){
         if(this.sindicato == "comercio"){
             valorExtras = (this.basicoCom/200*this.hsLaV*1.5) + (this.basicoCom/200*this.hsFS*2);
-            return parseInt(valorExtras);
+            return valorExtras;
         }else{
             valorExtras = (this.basico/200*this.hsLaV*1.5) + (this.basico/200*this.hsFS*2);
-            return parseInt(valorExtras);
+            return valorExtras;
         };
     };
 
     calculoBasico(){
         if(this.sindicato == "comercio"){
-            sueldoBruto = ( this.basicoCom / 30 * (30-this.ausencias) ) * 1.0833;
-            return parseInt(sueldoBruto);
+            sueldoBruto = this.basicoCom / 30 * (30-this.ausencias);
+            return sueldoBruto;
         }else{
             sueldoBruto = this.basico / 30 * (30-this.ausencias);
-            return parseInt(sueldoBruto);
+            return sueldoBruto;
         };
     };
 
-    calculoSac (){
-
-        if (sac.length == 0){
-            return 0;
-        }else{
-            return sac[0];
-        }
-    }
-
     sueldoNeto() {
         if (this.sindicato == "comercio") {
-            let neto = ( this.calculoBasico() + this.calculohs() + this.calculoSac() ) * 0.80;
+            let neto = ( this.calculoBasico() * 1.0833 + this.calculohs() + sac[0]/2 ) * 0.80;
             return parseInt(neto);
         }else{
-            let neto = ( this.calculoBasico() + this.calculohs() + this.calculoSac() ) * 0.83;
+            let neto = ( this.calculoBasico() + this.calculohs() + sac[0]/2 ) * 0.83;
             return parseInt(neto);
         };
     };
@@ -90,23 +60,24 @@ const sac = [];
         sac.push(prompt("Ingresa tus sueldos netos de enero a junio, o de julio a diciembre para conocer tu Aguinaldo"));
     };
     sac.sort((a, b) => b - a);
-    };
+    }
 
     if(sindicato == "comercio"){
         cat = prompt("Sos del sindicato de Comercio, indicanos tu categoria: maest, adm, vend, caj, aux, aux esp");
-        
+
         while(categoria.includes(cat) == false){
             cat = prompt("La categoria que ingresaste no es valida, volve a intertarlo")
         };
 
         const total1 = new Sueldo (0, escalas[categoria.indexOf(cat)], hsLaV, hsFS, ausencias, sindicato);
         alert("Tu sueldo Neto sera de $" + total1.sueldoNeto());
-        
+
     }else{
         basico = prompt("Ingresa tu sueldo basico");
         const total1 = new Sueldo (basico, 0, hsLaV, hsFS, ausencias, sindicato);
         alert("Tu sueldo Neto sera de $" + total1.sueldoNeto());
     };
+
 
 
 
