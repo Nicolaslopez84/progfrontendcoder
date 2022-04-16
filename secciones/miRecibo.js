@@ -15,6 +15,7 @@ if(login == "s"){
                 if(usuario == "nicolas" && clave == "12345"){
                     alert("Bienvenido " + usuario);
                 break;
+                
                 };
         };
     };
