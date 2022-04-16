@@ -2,7 +2,7 @@
 let login = prompt("hola! Queres loguearte? S/N");
 let usuario = "";
 
-if(login == "S"){
+if(login == "s"){
     usuario = prompt ("Hola!Ingresa tu nombre");
     let clave = prompt ("Ahora ingresa tu clave");
     if(usuario == "nicolas" && clave == "12345"){    
