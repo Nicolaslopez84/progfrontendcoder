@@ -56,21 +56,12 @@ class Sueldo{
         };
     };
 
-    calculoSac (){
-
-        if (sac.length == 0){
-            return 0;
-        }else{
-            return sac[0];
-        }
-    }
-
     sueldoNeto() {
         if (this.sindicato == "comercio") {
-            let neto = ( this.calculoBasico() + this.calculohs() + this.calculoSac() ) * 0.80;
+            let neto = ( this.calculoBasico() + this.calculohs() + validacionSac()/2 ) * 0.80;
             return parseInt(neto);
         }else{
-            let neto = ( this.calculoBasico() + this.calculohs() + this.calculoSac() ) * 0.83;
+            let neto = ( this.calculoBasico() + this.calculohs() + validacionSac()/2 ) * 0.83;
             return parseInt(neto);
         };
     };
@@ -86,10 +77,12 @@ let cat = "";
 const sac = [];
 
     if(periodo == "junio" || periodo == "diciembre"){   
-    for (let i = 1 ; i <= 6; i++){
+    
+        for (let i = 1 ; i <= 6; i++){
         sac.push(prompt("Ingresa tus sueldos netos de enero a junio, o de julio a diciembre para conocer tu Aguinaldo"));
-    };
-    sac.sort((a, b) => b - a);
+    }   
+        sac.sort((a, b) => b - a)
+        validacionSac()
     };
 
     if(sindicato == "comercio"){
@@ -109,6 +102,13 @@ const sac = [];
     };
 
 
+function validacionSac(){
+    if (sac.length == 0){
+        return 0;
+    }else{
+        return sac[0];
+    }
+}
 
 
 
