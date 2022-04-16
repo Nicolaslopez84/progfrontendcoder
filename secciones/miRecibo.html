@@ -11,8 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../scss/main.css">
-    <script src="miRecibo.js"></script>
+    <link rel="stylesheet" href="../scss/main.css">   
 </head>
 <body>
     <div id="grilla">
@@ -22,51 +21,84 @@
           <nav class="navbar navbar-expand-lg navbar-dark bg-primary navegacion">
             <div class="container-fluid justify-content-md-start justify-content-start">
               <a class="navbar-brand" href="../index.html">
-                      <img class="logo" src="../img/Rh Lop Logo5.jpg" alt="logoAnimado"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                <img class="logo" src="../img/Rh Lop Logo5.jpg" alt="logoAnimado">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll align-items-md-center" style="--bs-scroll-height: 300px;">
+                  <li class="nav-item ps-2">
+                    <a class="nav-link" href=".servicios.html">Servicios</a>
+                  </li>
+                  <li class="nav-item ps-2">
+                    <a class="nav-link" href=".equipo.html">Equipo</a>
+                  </li>
+                  <li class="nav-item ps-2">
+                    <a class="nav-link" href=".empleos.html">Empleos</a>
+                  </li>
+                  <li class="nav-item ps-2">
+                    <a class="nav-link" href=".contacto.html">Contacto</a>
+                  </li>
+                  <li class="nav-item ps-2">
+                    <a class="nav-link" href=".miRecibo.html">Mi Recibo</a>
+                </li>
+                  <li class="nav-item dropdown ms-3 d-flex">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="../img/icono idioma.png" alt="">
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                      <li><a class="dropdown-item" href="#">Español</a></li>
+                      <li><a class="dropdown-item" href="#">Ingles</a></li>
+                    </ul>
+                  </li>
+                </ul>      
+                <form class="d-flex m-1" style="width: 250px;">
+                  <input class="form-control" type="search" placeholder="" aria-label="Search">
+                  <button class="btn btn-outline-primary border border-primary order-md-1" type="submit"><img src="/img/icono search.png" alt=""></button>
+                </form>
+                <button type="button" class="btn btn-primary align-self-center m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Login
                 </button>
-                <div class="collapse navbar-collapse" id="navbarScroll">
-                  <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll align-items-md-center" style="--bs-scroll-height: 300px;">
-                    <li class="nav-item ps-2">
-                      <a class="nav-link" href="servicios.html">Servicios</a>
-                    </li>
-                    <li class="nav-item ps-2">
-                      <a class="nav-link" href="equipo.html">Equipo</a>
-                    </li>
-                    <li class="nav-item ps-2">
-                      <a class="nav-link" href="empleos.html">Empleos</a>
-                    </li>
-                    <li class="nav-item ps-2">
-                      <a class="nav-link" href="contacto.html">Contacto</a>
-                    </li>
-                    <li class="nav-item ps-2">
-                        <a class="nav-link" href="miRecibo.html">Mi Recibo</a>
-                    </li>
-                    <li class="nav-item dropdown ms-3 d-flex">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../img/icono idioma.png" alt="">
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                        <li><a class="dropdown-item" href="#">Español</a></li>
-                        <li><a class="dropdown-item" href="#">Ingles</a></li>
-                      </ul>
-                    </li>
-                  </ul>      
-                  <form class="d-flex">
-                    <input class="form-control" type="search" placeholder="" aria-label="Search">
-                    <button class="btn btn-outline-primary border border-primary order-md-1" type="submit"><img src="../img/icono search.png" alt=""></button>
-                  </form>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ingresa tus datos para loguearte</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1 nombre" aria-describedby="emailHelp">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1 email" aria-describedby="emailHelp">
+                          <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1 password">
+                          </div>
+                          <button id="btn_acceder" type="submit" class="btn btn-primary">Acceder</button>
+                          <button type="reset" class="btn btn-primary">Cancelar</button>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class=navegacion__redes>
-                  <img src="../img/icono facebook.png" alt="Facebook">
-                  <img src="../img/icono insta.jpg" alt="instagram">
-                  <img src="../img/icono linkedin.png" alt="linkedin">
-                  <img src="../img/icono wsp.jpg" alt="wsp">
-              </div>
-            </nav>                     
-      </header>
+            </div>
+            <div class=navegacion__redes>
+              <img src="../img/icono facebook.png" alt="Facebook">
+              <img src="../img/icono insta.jpg" alt="instagram">
+              <img src="../img/icono linkedin.png" alt="linkedin">
+              <img src="../img/icono wsp.jpg" alt="wsp">
+            </div>
+          </nav>                     
+        </header> 
       <div class="body__contenido">
             <h1>Bienvenido a RH Lop Jobs</h1>
             <section>
@@ -105,5 +137,7 @@
         </footer>
     </div> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   <!--<script src="../js/miRecibo.js"></script>-->
+    <script src="../js/loguin.js"></script>
 </body>
 </html>
