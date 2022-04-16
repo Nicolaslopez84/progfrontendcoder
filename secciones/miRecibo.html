@@ -57,8 +57,8 @@
                   <input class="form-control" type="search" placeholder="" aria-label="Search">
                   <button class="btn btn-outline-primary border border-primary order-md-1" type="submit"><img src="/img/icono search.png" alt=""></button>
                 </form>
-                <button type="button" class="btn btn-primary align-self-center m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Login
+                <button id="login" type="button" class="btn btn-danger align-self-center m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Ingresar
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -69,18 +69,18 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <form>
+                        <form id="loguearse">
                           <div class="mb-3">
                             <label class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1 nombre" aria-describedby="emailHelp">
-                            <label for="exampleInputEmail1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1 email" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" id="nombre" required>
+                            <label class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="usuario" required>
                           <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1 password">
+                            <input type="password" class="form-control" id="password" required>
                           </div>
                           <button id="btn_acceder" type="submit" class="btn btn-primary">Acceder</button>
-                          <button type="reset" class="btn btn-primary">Cancelar</button>
+                          <button type="reset" class="btn btn-primary">Limpiar</button>
                         </form>
                       </div>
                       <div class="modal-footer">
@@ -100,7 +100,7 @@
           </nav>                     
         </header> 
       <div class="body__contenido">
-            <h1>Bienvenido a RH Lop Jobs</h1>
+            <h1 id="tituloMiRecibo">Bienvenido a RH Lop Jobs</h1>
             <section>
                 <p>Aqui podras simular y descargar tu recibo de sueldo, sigue las instrucciones para conocer cual seria tu sueldo en mano del mes</p>
             </section>

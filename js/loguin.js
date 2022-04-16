@@ -1,27 +1,42 @@
 
-let usuario = "";
 const BBDDUsuarios = [
-    
-    {usuario: nicolasl, clave: 12345}, 
-    {usuario: tomasc, clave: 12345} 
+
+    {usuario: "nicolasl", password: "12345"}, 
+    {usuario: "tomasc", password: "12345"} 
 
 ];
 
 
-if(login == "S"){
-    usuario = prompt ("Hola!Ingresa tu nombre");
-    let clave = prompt ("Ahora ingresa tu clave");
-    if(usuario == "nicolas" && clave == "12345"){    
-        alert("Bienvenido "+ usuario);
-    }else{    
-        for(let i = 2 ; i>= 1; i--){
-            alert("ingresaste mal tus datos, te quedan " + i + " intentos");
-            usuario = prompt ("Hola!Ingresa tu usuario");
-            clave = prompt ("Ahora ingresa tu clave");
-                if(usuario == "nicolas" && clave == "12345"){
-                    alert("Bienvenido " + usuario);
-                break;
-                };
-        };
-    };
-};
+document.getElementById("loguearse").addEventListener("submit", (e) =>{
+   
+    e.preventDefault();
+    let nombre = document.getElementById("nombre").value;
+    let usuario = document.getElementById("usuario").value;
+    let password = document.getElementById("password").value;
+    
+    if (BBDDUsuarios.some((el) => el.usuario === usuario && el.password === password) == true){
+        
+        alert(`Bienvenido ${nombre}`);
+        let titulo = document.getElementById("tituloMiRecibo");
+        titulo.innerText = `${nombre}, bienvenido a RH Lop Jobs`;
+        let logueado = document.getElementById("login");
+        logueado.className = "btn btn-success align-self-center m-1";
+        logueado.innerText = `${usuario}`;
+     
+
+    }else{
+        
+        alert(`ingresaste mal tus datos, volve a intentarlo`);
+        
+    }
+    
+});
+
+
+
+
+
+
+
+
+
