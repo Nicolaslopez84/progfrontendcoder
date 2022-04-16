@@ -102,8 +102,61 @@
       <div class="body__contenido">
             <h1 id="tituloMiRecibo">Bienvenido a RH Lop Jobs</h1>
             <section>
-                <p>Aqui podras simular y descargar tu recibo de sueldo, sigue las instrucciones para conocer cual seria tu sueldo en mano del mes</p>
+                <p>Aqui podras simular y descargar tu recibo de sueldo, sigue las instrucciones para conocer cual seria tu sueldo en mano del mes.
+                  <br>
+                  Tenes que loguearte para usar nuestros recursos.
+                </p>
             </section>
+            <div class="container">
+              <form class="row g-3 m-3">
+                  <div class="col-md-2">
+                      <label class="form-label">Mes a Liquidar</label>
+                      <input type="text" class="form-control" id="periodo" placeholder="Mes a liquidar">
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label">Hs Extras L a V</label>
+                    <input type="number" class="form-control" id="HsExtrasLaV" placeholder="Horas Extras dias habiles">
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label">Hs Extras Fs</label>
+                    <input type="number" class="form-control" id="HsExtrasFS" placeholder="Horas Extras no habiles">
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label">Categoria</label>
+                    <select id="categorias" class="form-select">
+                      <option selected>Administrativo</option>
+                      <option selected>Vendedor</option>
+                      <option selected>Cajero</option>  
+                      <option selected>Auxiliar</option>
+                      <option selected>Maestranza</option>
+                      <option selected>Auxiliar Esp</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label">Ausencias</label>
+                    <input type="number" class="form-control" id="ausencias">
+                  </div>
+                  <div class="col-md-2">
+                    <label class="form-label">Sindicato</label>
+                    <select id="sindicato" class="form-select">
+                      <option selected>Fuera de Convenio</option>
+                      <option selected>Comercio</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                       
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 botones d-flex justify-content-center">
+                    <button id="btn__calcular" type="button" class="btn btn-primary m-1" hidden>Calcular</button>
+                    <button type="reset" class="btn btn-primary m-1" >Reestablecer</button>
+                  </div>
+                </form>
+            </div>
       </div>  
         <!--Footer-->
         <footer>       

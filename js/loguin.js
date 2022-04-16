@@ -17,12 +17,8 @@ document.getElementById("loguearse").addEventListener("submit", (e) =>{
     if (BBDDUsuarios.some((el) => el.usuario === usuario && el.password === password) == true){
         
         alert(`Bienvenido ${nombre}`);
-        let titulo = document.getElementById("tituloMiRecibo");
-        titulo.innerText = `${nombre}, bienvenido a RH Lop Jobs`;
-        let logueado = document.getElementById("login");
-        logueado.className = "btn btn-success align-self-center m-1";
-        logueado.innerText = `${usuario}`;
-     
+        logueate(nombre, usuario);
+          
 
     }else{
         
@@ -33,9 +29,17 @@ document.getElementById("loguearse").addEventListener("submit", (e) =>{
 });
 
 
+function logueate(nombre, usuario){
 
-
-
+    let titulo = document.getElementById("tituloMiRecibo");
+    titulo.innerText = `${nombre}, bienvenido a RH Lop Jobs`;
+    let logueado = document.getElementById("login");
+    logueado.className = "btn btn-success align-self-center m-1";
+    logueado.innerText = `${usuario}`;
+    document.getElementById("btn__calcular").removeAttribute("hidden");
+    
+  
+};
 
 
 
