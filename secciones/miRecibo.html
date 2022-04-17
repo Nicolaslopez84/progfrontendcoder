@@ -108,18 +108,22 @@
                 </p>
             </section>
             <div class="container">
-              <form class="row g-3 m-3">
-                  <div class="col-md-2">
+              <form id="datosRecibo"class="row g-3 m-3">
+                  <div id="mesALiquidar" class="col-md-2">
                       <label class="form-label">Mes a Liquidar</label>
                       <input type="text" class="form-control" id="periodo" placeholder="Mes a liquidar">
                   </div>
                   <div class="col-md-2">
+                    <label class="form-label">Basico</label>
+                    <input type="number" class="form-control" id="Basico" placeholder="Sueldo Basico" disabled>
+                  </div>
+                  <div class="col-md-2">
                     <label class="form-label">Hs Extras L a V</label>
-                    <input type="number" class="form-control" id="HsExtrasLaV" placeholder="Horas Extras dias habiles">
+                    <input type="number" class="form-control" id="HsExtrasLaV" placeholder="Horas Extras dias habiles" required>
                   </div>
                   <div class="col-md-2">
                     <label class="form-label">Hs Extras Fs</label>
-                    <input type="number" class="form-control" id="HsExtrasFS" placeholder="Horas Extras no habiles">
+                    <input type="number" class="form-control" id="HsExtrasFS" placeholder="Horas Extras no habiles" required>
                   </div>
                   <div class="col-md-2">
                     <label class="form-label">Categoria</label>
@@ -130,29 +134,30 @@
                       <option selected>Auxiliar</option>
                       <option selected>Maestranza</option>
                       <option selected>Auxiliar Esp</option>
+                      <option selected aria-checked="true">Sin categoria</option>
                     </select>
                   </div>
                   <div class="col-md-2">
                     <label class="form-label">Ausencias</label>
-                    <input type="number" class="form-control" id="ausencias">
+                    <input type="number" class="form-control" id="ausencias" required>
                   </div>
-                  <div class="col-md-2">
-                    <label class="form-label">Sindicato</label>
-                    <select id="sindicato" class="form-select">
-                      <option selected>Fuera de Convenio</option>
-                      <option selected>Comercio</option>
-                    </select>
-                  </div>
-                  <div class="col-12">
+                  <div id="sindicato" class="col-md-2">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
-                      <label class="form-check-label" for="gridCheck">
-                       
+                      <input id="FC" class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Fuera de convenio
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input id="comercio" class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault2">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Comercio
                       </label>
                     </div>
                   </div>
+                  </div>
                   <div class="col-12 botones d-flex justify-content-center">
-                    <button id="btn__calcular" type="button" class="btn btn-primary m-1" hidden>Calcular</button>
+                    <button id="btn__calcular" type="submit" class="btn btn-primary m-1" >Calcular</button>
                     <button type="reset" class="btn btn-primary m-1" >Reestablecer</button>
                   </div>
                 </form>
@@ -190,7 +195,7 @@
         </footer>
     </div> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-   <!--<script src="../js/miRecibo.js"></script>-->
     <script src="../js/loguin.js"></script>
+    <script src="../js/miRecibo.js"></script>
 </body>
 </html>
