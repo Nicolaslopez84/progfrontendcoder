@@ -25,7 +25,8 @@
         "parciales/_vars.scss",
         "parciales/_responsive.scss",
         "parciales/_legales.scss",
-        "parciales/_vars.scss"
+        "parciales/_vars.scss",
+        "parciales/_miRecibo.scss"
     ],
     "names": [],
     "file": "main.css"
