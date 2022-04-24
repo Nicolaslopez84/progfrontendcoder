@@ -29,19 +29,19 @@
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll align-items-md-center" style="--bs-scroll-height: 300px;">
                   <li class="nav-item ps-2">
-                    <a class="nav-link" href=".servicios.html">Servicios</a>
+                    <a class="nav-link" href="servicios.html">Servicios</a>
                   </li>
                   <li class="nav-item ps-2">
-                    <a class="nav-link" href=".equipo.html">Equipo</a>
+                    <a class="nav-link" href="equipo.html">Equipo</a>
                   </li>
                   <li class="nav-item ps-2">
-                    <a class="nav-link" href=".empleos.html">Empleos</a>
+                    <a class="nav-link" href="empleos.html">Empleos</a>
                   </li>
                   <li class="nav-item ps-2">
-                    <a class="nav-link" href=".contacto.html">Contacto</a>
+                    <a class="nav-link" href="contacto.html">Contacto</a>
                   </li>
                   <li class="nav-item ps-2">
-                    <a class="nav-link" href=".miRecibo.html">Mi Recibo</a>
+                    <a class="nav-link" href="miRecibo.html">Mi Recibo</a>
                 </li>
                   <li class="nav-item dropdown ms-3 d-flex">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,13 +52,20 @@
                       <li><a class="dropdown-item" href="#">Ingles</a></li>
                     </ul>
                   </li>
+                  <li class="nav-item dropdown ms-3 d-flex">
+                    <a class="nav-link dropdown-toggle" href="#" id="buscar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="../img/icono search.png" alt="">
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                      <input class="form-control" type="search" placeholder="" aria-label="Search">        
+                    </ul>
+                  </li>
                 </ul>      
-                <form class="d-flex m-1" style="width: 250px;">
-                  <input class="form-control" type="search" placeholder="" aria-label="Search">
-                  <button class="btn btn-outline-primary border border-primary order-md-1" type="submit"><img src="/img/icono search.png" alt=""></button>
-                </form>
                 <button id="login" type="button" class="btn btn-danger align-self-center m-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Ingresar
+                </button>
+                <button id="logout" type="reset" class="btn btn-success align-self-center m-1" hidden>
+                  Logout
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -79,7 +86,7 @@
                             <label class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" required>
                           </div>
-                          <button id="btn_acceder" type="submit" class="btn btn-primary">Acceder</button>
+                          <button id="btn_acceder" type="submit" class="btn btn-primary">Login</button>
                           <button type="reset" class="btn btn-primary">Limpiar</button>
                         </form>
                       </div>
@@ -102,30 +109,30 @@
       <div class="body__contenido">
             <h1 id="tituloMiRecibo">Bienvenido a RH Lop Jobs</h1>
             <section>
-                <p>Aqui podras simular y descargar tu recibo de sueldo, sigue las instrucciones para conocer cual seria tu sueldo en mano del mes.
+                <p>Aqui podras simular, guardar tus ultimos 12 recibos y descargarlos, sigue las instrucciones para conocer cual seria tu sueldo en mano del mes.
                   <br>
                   Tenes que loguearte para usar nuestros recursos.
                 </p>
             </section>
-            <div class="container">
-              <form id="datosRecibo"class="row g-3 m-3">
-                  <div id="mesALiquidar" class="col-md-2">
+            <div class="container-fluid">
+              <form id="datosRecibo"class="row col-md-6 g-3 m-3 align-items-center">
+                  <div id="mesALiquidar" class="col-md-6">
                       <label class="form-label">Mes a Liquidar</label>
                       <input type="text" class="form-control" id="periodo" placeholder="Mes a liquidar">
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-6">
                     <label class="form-label">Basico</label>
-                    <input type="number" class="form-control" id="Basico" placeholder="Sueldo Basico" disabled>
+                    <input type="number" class="form-control" id="Basico" placeholder="Sueldo Basico">
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-6">
                     <label class="form-label">Hs Extras L a V</label>
                     <input type="number" class="form-control" id="HsExtrasLaV" placeholder="Horas Extras dias habiles" required>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-6">
                     <label class="form-label">Hs Extras Fs</label>
                     <input type="number" class="form-control" id="HsExtrasFS" placeholder="Horas Extras no habiles" required>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-6">
                     <label class="form-label">Categoria</label>
                     <select id="categorias" class="form-select">
                       <option selected>Administrativo</option>
@@ -137,27 +144,19 @@
                       <option selected aria-checked="true">Sin categoria</option>
                     </select>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-6">
                     <label class="form-label">Ausencias</label>
                     <input type="number" class="form-control" id="ausencias" required>
                   </div>
-                  <div id="sindicato" class="col-md-2">
-                    <div class="form-check">
-                      <input id="FC" class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Fuera de convenio
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input id="comercio" class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        Comercio
-                      </label>
-                    </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Categoria</label>
+                    <select id="sindicato" class="form-select">
+                      <option selected>Comercio</option>
+                      <option>Fuera de Convenio</option>
+                    </select>
                   </div>
-                  </div>
-                  <div class="col-12 botones d-flex justify-content-center">
-                    <button id="btn__calcular" type="submit" class="btn btn-primary m-1" >Calcular</button>
+                  <div class="col-md-6 botones d-flex justify-content-center">
+                    <button id="btn__calcular" type="submit" class="btn btn-primary m-1" hidden >Calcular</button>
                     <button type="reset" class="btn btn-primary m-1" >Reestablecer</button>
                   </div>
                 </form>

@@ -78,7 +78,7 @@ footer {
 .footer__ubicacion {
   grid-area: ubicacion; 
   & iframe {
-    width: 100vh;
+    width: 90vh;
     height: 20vh;
     @include movil{
       width: 45vh;

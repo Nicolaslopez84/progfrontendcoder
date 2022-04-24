@@ -4,8 +4,67 @@ let valorExtras = 0;
 let sueldoBruto = 0;
 const categoria = ["Maestranza", "Administrativo", "Vendedor", "Cajero", "Auxiliar", "Auxiliar Esp"];
 const escalas = [79828.57, 80695.88, 80984.96, 80984.96, 80984.96, 81679.33];
-const sac = [];
+const sueldosCargados = [];
 
+
+//evento que deshabilita el input "Categoria" si no sos de Comercio
+document.getElementById("sindicato").addEventListener("input", () => {
+    
+    let sindicatoElegido = document.getElementById("sindicato").value;    
+
+    if(sindicatoElegido == "Fuera de Convenio"){
+    document.getElementById("categorias").setAttribute("disabled","")
+    }else{
+        document.getElementById("categorias").removeAttribute("disabled")   
+    }
+})
+
+//evento para el calculo del sueldo neto
+document.getElementById("datosRecibo").addEventListener("submit", (e) =>{
+   
+    e.preventDefault();
+
+let periodo = document.getElementById("periodo").value;
+let sindicatoElegido = document.getElementById("sindicato").value;
+let basico = parseInt(document.getElementById("Basico").value)
+let hsLaV = parseInt(document.getElementById("HsExtrasLaV").value);
+let hsFS = parseInt(document.getElementById("HsExtrasFS").value);
+let ausencias = parseInt(document.getElementById("ausencias").value);    
+let cat = document.getElementById("categorias").value;  
+
+
+
+        if((basico > escalas[categoria.indexOf(cat)] && sindicatoElegido == "Comercio") || sindicatoElegido == "Fuera de Convenio"){
+
+            const total1 = new Sueldo (basico, hsLaV, hsFS, ausencias, sindicatoElegido);
+            
+            alert("Tu sueldo Neto sera de $" + total1.sueldoNeto());
+            localStorage.setItem("periodo", periodo);
+            localStorage.setItem("Neto", total1.sueldoNeto());
+
+        
+        }else{
+            
+            const total1 = new Sueldo (escalas[categoria.indexOf(cat)], hsLaV, hsFS, ausencias, sindicatoElegido);
+            alert("Tu sueldo Neto sera de $" + total1.sueldoNeto());
+            //sueldosCargados.push(new SueldosNetos(periodo, total1.sueldoNeto()));
+        }
+
+
+})
+
+class SueldosNetos{
+    constructor(periodo, neto)
+    {
+        this.periodo = periodo.toUpperCase();
+        this.neto = neto;
+    }
+
+
+}
+
+
+//clase para los calculos del sueldo neto
 class Sueldo{
     constructor(basico, hsLaV, hsFS, ausencias, sindicato){
         this.basico = parseInt (basico);
@@ -46,46 +105,6 @@ class Sueldo{
     };
 };
 
-document.getElementById("datosRecibo").addEventListener("submit", (e) =>{
-   
-    e.preventDefault();
-
-let periodo = document.getElementById("periodo").value
-let basico = parseInt(document.getElementById("Basico").value)
-let hsLaV = parseInt(document.getElementById("HsExtrasLaV").value);
-let hsFS = parseInt(document.getElementById("HsExtrasFS").value);
-let ausencias = parseInt(document.getElementById("ausencias").value);    
-let cat = document.getElementById("categorias").value;  
-
-
-
-/*    if(periodo == "junio" || periodo == "diciembre"){   
-    
-        for (let i = 1 ; i <= 6; i++){
-        sac.push(prompt("Ingresa tus sueldos netos de enero a junio, o de julio a diciembre para conocer tu Aguinaldo"));
-    }   
-        sac.sort((a, b) => b - a)
-
-    };*/
-
-
-    if(document.getElementById("comercio").value == true){
-            console.log(true)
-        /*const total1 = new Sueldo (escalas[categoria.indexOf(cat)], hsLaV, hsFS, ausencias, "Comercio");
-        alert("Tu sueldo Neto sera de $" + total1.calculoBasico());
-        alert("Tu sueldo Neto sera de $" + total1.calculohs());
-        alert("Tu sueldo Neto sera de $" + total1.sueldoNeto())*/
-        
-    }else{
-        console.log(false)
-        /*const total1 = new Sueldo (basico, hsLaV, hsFS, ausencias, sindicato);
-        alert("Tu sueldo Neto sera de $" + total1.calculoBasico());
-        alert("Tu sueldo Neto sera de $" + total1.calculohs());
-        alert("Tu sueldo Neto sera de $" + total1.sueldoNeto())*/
-  
-    };
-
-})
 
 /*function validacionSac(){
     if (sac.length == 0){
@@ -95,17 +114,14 @@ let cat = document.getElementById("categorias").value;
     }
 }*/
 
+/*    if(periodo == "junio" || periodo == "diciembre"){   
+    
+        for (let i = 1 ; i <= 6; i++){
+        sac.push(prompt("Ingresa tus sueldos netos de enero a junio, o de julio a diciembre para conocer tu Aguinaldo"));
+    }   
+        sac.sort((a, b) => b - a)
 
-let input1  = document.getElementById("FC");
-input1.addEventListener("input", (e) => {
-
-    document.getElementById("Basico").removeAttribute("disabled")
-
-  }
-)
-
-
-
+    };*/
 
 
 
