@@ -115,10 +115,22 @@
                 </p>
             </section>
             <div class="container-fluid">
-              <form id="datosRecibo"class="row col-md-6 g-3 m-3 align-items-center">
+              <form id="datos__recibo"class="row col-md-6 g-3 m-3 align-items-center">
                   <div id="mesALiquidar" class="col-md-6">
-                      <label class="form-label">Mes a Liquidar</label>
-                      <input type="text" class="form-control" id="periodo" placeholder="Mes a liquidar">
+                    <label class="form-label">Periodo</label>
+                    <select id="periodo" class="form-select">
+                      <option selected aria-checked="true">Enero</option>
+                      <option>Febrero</option>
+                      <option>Marzo</option>
+                      <option>Abril</option>  
+                      <option>Mayo</option>
+                      <option>Junio</option>
+                      <option>Agosto</option>
+                      <option>Septiembre</option> 
+                      <option>Octubre</option> 
+                      <option>Noviembre</option> 
+                      <option>Diciembre</option>                    
+                    </select>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label">Basico</label>
@@ -135,13 +147,13 @@
                   <div class="col-md-6">
                     <label class="form-label">Categoria</label>
                     <select id="categorias" class="form-select">
-                      <option selected>Administrativo</option>
-                      <option selected>Vendedor</option>
-                      <option selected>Cajero</option>  
-                      <option selected>Auxiliar</option>
-                      <option selected>Maestranza</option>
-                      <option selected>Auxiliar Esp</option>
                       <option selected aria-checked="true">Sin categoria</option>
+                      <option>Administrativo</option>
+                      <option>Vendedor</option>
+                      <option>Cajero</option>  
+                      <option>Auxiliar</option>
+                      <option>Maestranza</option>
+                      <option>Auxiliar Esp</option>                   
                     </select>
                   </div>
                   <div class="col-md-6">
@@ -159,8 +171,15 @@
                     <button id="btn__calcular" type="submit" class="btn btn-primary m-1" hidden >Calcular</button>
                     <button type="reset" class="btn btn-primary m-1" >Reestablecer</button>
                   </div>
+                  <div class="col-md-6 botones d-flex align-items-center">
+                    <button id="btn__sueldos" type="button" class="btn btn-primary m-1">Traer Sueldos</button>
+                    <button type="reset" class="btn btn-primary m-1" >Eliminar datos</button>
+                  </div>
                 </form>
             </div>
+            <div id="netos__guardados" class="container-fluid col-md-6 align-items-end">
+            </div>
+            
       </div>  
         <!--Footer-->
         <footer>       
