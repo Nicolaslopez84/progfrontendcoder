@@ -114,73 +114,86 @@
                   Tenes que loguearte para usar nuestros recursos.
                 </p>
             </section>
-            <div class="container-fluid">
-              <form id="datos__recibo"class="row col-md-6 g-3 m-3 align-items-center">
-                  <div id="mesALiquidar" class="col-md-6">
-                    <label class="form-label">Periodo</label>
-                    <select id="periodo" class="form-select">
-                      <option selected aria-checked="true">Enero</option>
-                      <option>Febrero</option>
-                      <option>Marzo</option>
-                      <option>Abril</option>  
-                      <option>Mayo</option>
-                      <option>Junio</option>
-                      <option>Agosto</option>
-                      <option>Septiembre</option> 
-                      <option>Octubre</option> 
-                      <option>Noviembre</option> 
-                      <option>Diciembre</option>                    
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Basico</label>
-                    <input type="number" class="form-control" id="Basico" placeholder="Sueldo Basico">
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Hs Extras L a V</label>
-                    <input type="number" class="form-control" id="HsExtrasLaV" placeholder="Horas Extras dias habiles" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Hs Extras Fs</label>
-                    <input type="number" class="form-control" id="HsExtrasFS" placeholder="Horas Extras no habiles" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Categoria</label>
-                    <select id="categorias" class="form-select">
-                      <option selected aria-checked="true">Sin categoria</option>
-                      <option>Administrativo</option>
-                      <option>Vendedor</option>
-                      <option>Cajero</option>  
-                      <option>Auxiliar</option>
-                      <option>Maestranza</option>
-                      <option>Auxiliar Esp</option>                   
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Ausencias</label>
-                    <input type="number" class="form-control" id="ausencias" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Categoria</label>
-                    <select id="sindicato" class="form-select">
-                      <option selected>Comercio</option>
-                      <option>Fuera de Convenio</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6 botones d-flex justify-content-center">
-                    <button id="btn__calcular" type="submit" class="btn btn-primary m-1" hidden >Calcular</button>
-                    <button type="reset" class="btn btn-primary m-1" >Reestablecer</button>
-                  </div>
-                  <div class="col-md-6 botones d-flex align-items-center">
-                    <button id="btn__sueldos" type="button" class="btn btn-primary m-1">Traer Sueldos</button>
-                    <button type="reset" class="btn btn-primary m-1" >Eliminar datos</button>
-                  </div>
-                </form>
+          <div class="container-fluid">
+            <div class="row row-cols-2">
+              <div class="col">
+                <form id="datos__recibo" class="row">
+                    <div id="mesALiquidar" class="col-md-6">
+                      <label class="form-label">Periodo</label>
+                      <select id="periodo" class="form-select">
+                        <option selected aria-checked="true">Enero</option>
+                        <option>Febrero</option>
+                        <option>Marzo</option>
+                        <option>Abril</option>  
+                        <option>Mayo</option>
+                        <option>Junio</option>
+                        <option>Agosto</option>
+                        <option>Septiembre</option> 
+                        <option>Octubre</option> 
+                        <option>Noviembre</option> 
+                        <option>Diciembre</option>                    
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Basico</label>
+                      <input type="number" class="form-control" id="Basico" placeholder="Sueldo Basico">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Hs Extras L a V</label>
+                      <input type="number" class="form-control" id="HsExtrasLaV" placeholder="Horas Extras dias habiles" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Hs Extras Fs</label>
+                      <input type="number" class="form-control" id="HsExtrasFS" placeholder="Horas Extras no habiles" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Categoria</label>
+                      <select id="categorias" class="form-select">
+                        <option selected aria-checked="true">Sin categoria</option>
+                        <option>Administrativo</option>
+                        <option>Vendedor</option>
+                        <option>Cajero</option>  
+                        <option>Auxiliar</option>
+                        <option>Maestranza</option>
+                        <option>Auxiliar Esp</option>                   
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Ausencias</label>
+                      <input type="number" class="form-control" id="ausencias" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Categoria</label>
+                      <select id="sindicato" class="form-select">
+                        <option selected>Comercio</option>
+                        <option>Fuera de Convenio</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 botones justify-content-center">
+                      <button id="btn__calcular" type="submit" class="btn btn-primary m-1" hidden >Calcular</button>
+                      <button type="reset" class="btn btn-primary m-1" >Reestablecer</button>
+                    </div>
+                </form>  
+              </div>
+              <div class="col">               
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Periodo</th>
+                      <th scope="col">Neto</th>
+                    </tr>
+                  </thead>
+                  <tbody id="netos__guardados">
+                  </tbody>
+                </table>
+              </div> 
+              <div class="col justify-content-end m-2 botones">
+                <button id="btn__sueldos" type="button" class="btn btn-primary m-1">Traer Sueldos</button>
+                <button id="btn__eliminar" type="reset" class="btn btn-primary m-1" >Eliminar datos</button>
+              </div>
             </div>
-            <div id="netos__guardados" class="container-fluid col-md-6 align-items-end">
-            </div>
-            
-      </div>  
+        </div>  
         <!--Footer-->
         <footer>       
             <div class="footer__navegacion"> 

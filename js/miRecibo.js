@@ -15,12 +15,31 @@ document.getElementById("sindicato").addEventListener("input", () => {
     }
 })
 
-//evento para mostrar sueldos guardados
+//evento para mostrar sueldos guardados 
 document.getElementById("btn__sueldos").addEventListener("click", () =>{
    
     let datosGuardados = document.getElementById("netos__guardados");
-    const almacenados = JSON.parse(localStorage.getItem(sessionStorage.getItem("usuario")))
+    let almacenados = JSON.parse(localStorage.getItem(sessionStorage.getItem("usuario")))
+    let tabla = "";
+    for (let i = 0; i < almacenados.length; i++) {  
+    tabla += 
+    `<tr id="tabla__sueldos">
+    <th scope="row">${i+1}</th>
+    <td>${almacenados[i].periodo}</td>
+    <td>${almacenados[i].neto} pesos</td>
+    </tr>`
+    }
+    datosGuardados.innerHTML = tabla
 
+ 
+})
+
+//evento para eliminar la tabla de sueldos guardados
+document.getElementById("btn__eliminar").addEventListener("click", () =>{
+        
+    let tabla = document.getElementById("tabla__sueldos");
+    tabla.remove()
+    
 })
 
 
@@ -69,7 +88,6 @@ class SueldosNetos{
 
     guardarLocalStorage(){
         localStorage.setItem(sessionStorage.getItem("usuario"), JSON.stringify(sueldosCargados));
-
     }
 }
 
