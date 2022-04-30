@@ -8,11 +8,9 @@ document.getElementById("sindicato").addEventListener("input", () => {
     
     let sindicatoElegido = document.getElementById("sindicato").value;    
 
-    if(sindicatoElegido == "Fuera de Convenio"){
-    document.getElementById("categorias").setAttribute("disabled","")
-    }else{
-        document.getElementById("categorias").removeAttribute("disabled")   
-    }
+    sindicatoElegido == "Fuera de Convenio" ? document.getElementById("categorias").setAttribute("disabled","") 
+    : document.getElementById("categorias").removeAttribute("disabled")   
+    
 })
 
 //evento para mostrar sueldos guardados 
@@ -21,24 +19,31 @@ document.getElementById("btn__sueldos").addEventListener("click", () =>{
     let datosGuardados = document.getElementById("netos__guardados");
     let almacenados = JSON.parse(localStorage.getItem(sessionStorage.getItem("usuario")))
     let tabla = "";
-    for (let i = 0; i < almacenados.length; i++) {  
-    tabla += 
-    `<tr id="tabla__sueldos">
-    <th scope="row">${i+1}</th>
-    <td>${almacenados[i].periodo}</td>
-    <td>${almacenados[i].neto} pesos</td>
-    </tr>`
+    almacenados != undefined && armarTabla()
+    
+    function armarTabla(){
+        for (let i = 0; i < almacenados.length; i++) {  
+        tabla += 
+        `<tr id="tabla__sueldos">
+        <th scope="row">${i+1}</th>
+        <td>${almacenados[i].periodo}</td>
+        <td>${almacenados[i].neto} pesos</td>
+        </tr>`
+        }
     }
+    
     datosGuardados.innerHTML = tabla
 
  
 })
 
+
 //evento para eliminar la tabla de sueldos guardados
 document.getElementById("btn__eliminar").addEventListener("click", () =>{
         
     let tabla = document.getElementById("tabla__sueldos");
-    tabla.remove()
+    tabla !== null && tabla.remove()
+        
     
 })
 
@@ -59,8 +64,7 @@ document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
         if((basico > escalas[categoria.indexOf(cat)] && sindicatoElegido == "Comercio") || sindicatoElegido == "Fuera de Convenio"){
 
             const total1 = new Sueldo (basico, hsLaV, hsFS, ausencias, sindicatoElegido);
-            
-            alert("Tu sueldo Neto sera de $" + total1.sueldoNeto());
+            SeguroDeCalcular(total1.sueldoNeto())
             sueldosCargados.push(new SueldosNetos(periodo, total1.sueldoNeto()));
             for (const acum of sueldosCargados){
                 acum.guardarLocalStorage();
@@ -69,7 +73,8 @@ document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
         }else{
             
             const total1 = new Sueldo (escalas[categoria.indexOf(cat)], hsLaV, hsFS, ausencias, sindicatoElegido);
-            alert("Tu sueldo Neto sera de $" + total1.sueldoNeto());
+            let total = total1.sueldoNeto()
+            SeguroDeCalcular(total)
             sueldosCargados.push(new SueldosNetos(periodo, total1.sueldoNeto()));
             for (const acum of sueldosCargados){
                 acum.guardarLocalStorage();
@@ -133,6 +138,29 @@ class Sueldo{
     };
 };
 
+//funciones sweetalert
+function SeguroDeCalcular (total){
+
+    swal({
+        title: "Seguro de hacer el calculo?",
+        text: "Al calcular se eliminaran los datos guardados en sesiones anteriores",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+        swal("Tu sueldo Neto sera de $" + total, {
+            icon: "success",
+        });
+        } else {
+        swal("Vuelve a intentarlo",
+        {   buttons: false,
+            timer: 1000});
+        }
+    });
+
+}
 
 /*function validacionSac(){
     if (sac.length == 0){

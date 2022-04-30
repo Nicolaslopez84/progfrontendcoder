@@ -128,8 +128,8 @@ footer {
       grid-template-areas: "footerNav ubicacion ubicacion" "footerRedes politicas copyright";
   -ms-grid-columns: 0.5fr 3fr 2fr;
       grid-template-columns: 0.5fr 3fr 2fr;
-  -ms-grid-rows: 1fr 6rem;
-      grid-template-rows: 1fr 6rem;
+  -ms-grid-rows: 1fr 5rem;
+      grid-template-rows: 1fr 5rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -245,14 +245,14 @@ footer h4 {
 }
 
 .footer__ubicacion iframe {
-  width: 100vh;
+  width: 90vh;
   height: 20vh;
   margin: 1rem;
 }
 
 @media screen and (max-width: 425px) {
   .footer__ubicacion iframe {
-    width: 45vh;
+    width: 35vh;
   }
 }
 
@@ -584,5 +584,14 @@ p {
 
 .legal__parrafo li {
   list-style: upper-roman;
+}
+
+.swal-overlay {
+  background-color: rgba(43, 165, 137, 0.45);
+}
+
+.swal-text {
+  font-size: 1.5rem;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

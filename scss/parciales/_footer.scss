@@ -9,7 +9,7 @@ footer {
     grid-template-areas: "footerNav ubicacion ubicacion"
                           "footerRedes politicas copyright";
     grid-template-columns: 0.5fr 3fr 2fr;
-    grid-template-rows: 1fr 6rem;
+    grid-template-rows: 1fr 5rem;
     @include tablet{
       display: flex;
         flex-direction: column;
@@ -81,7 +81,7 @@ footer {
     width: 90vh;
     height: 20vh;
     @include movil{
-      width: 45vh;
+      width: 35vh;
     }
     margin: 1rem;
     @include tablet{

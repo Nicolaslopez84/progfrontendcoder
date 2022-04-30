@@ -17,7 +17,7 @@ document.getElementById("loguearse").addEventListener("submit", (e) =>{
         
         if (BBDDUsuarios.some((el) => el.usuario === usuario && el.password === password) == true){
             
-            alert(`Bienvenido ${nombre}`);
+            swal(`Bienvenido ${nombre}`,"", "success");
             sessionStorage.setItem("usuario", usuario);
             sessionStorage.setItem("password", password);  
             
@@ -26,7 +26,7 @@ document.getElementById("loguearse").addEventListener("submit", (e) =>{
     
         }else{
             
-            alert(`ingresaste mal tus datos, volve a intentarlo`);
+            swal("Ingresaste mal tus datos, volve a intentarlo","","warning");
             
         }
         
@@ -59,14 +59,21 @@ function logueado(nombre){
 //cierre de sesion
 document.getElementById("logout").addEventListener ("click", () => {
      
-        alert("Hasta luego")
-        sessionStorage.clear()
+        swal(`Hasta luego ${sessionStorage.getItem("usuario")}`, {
+            button: false,
+
+        });    
+
+        sessionStorage.clear();
         sesionIniciada=""
         let titulo = document.getElementById("tituloMiRecibo");
         titulo.innerText = `Bienvenido a RH Lop Jobs`;
         document.getElementById("login").removeAttribute("hidden");
         document.getElementById("logout").setAttribute("hidden","");
         document.getElementById("btn__calcular").setAttribute("hidden","");
+        let tabla = document.getElementById("tabla__sueldos");
+        tabla !== null && tabla.remove();
+        
 
 
 })
