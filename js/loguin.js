@@ -1,11 +1,4 @@
 
-const BBDDUsuarios = [
-
-    {usuario: "nicolasl", password: "12345"}, 
-    {usuario: "tomasc", password: "12345"} 
-
-];
-
 
 document.getElementById("loguearse").addEventListener("submit", (e) =>{
    
@@ -15,20 +8,25 @@ document.getElementById("loguearse").addEventListener("submit", (e) =>{
         let usuario = document.getElementById("usuario").value;
         let password = document.getElementById("password").value;
         
-        if (BBDDUsuarios.some((el) => el.usuario === usuario && el.password === password) == true){
+        fetch (`http://localhost:3000/usuarios`)
+        .then(res => res.json())
+        .then(datos => {
+            const bdUsers = datos;
+            if (bdUsers.some((el) => el.usuario === usuario && el.password === password) == true){
             
-            swal(`Bienvenido ${nombre}`,"", "success");
-            sessionStorage.setItem("usuario", usuario);
-            sessionStorage.setItem("password", password);  
+                swal(`Bienvenido ${nombre}`,"", "success");
+                sessionStorage.setItem("usuario", usuario);
+                sessionStorage.setItem("password", password);  
+                
+                logueado(nombre);
+                
+            }else{
+                
+                swal("Ingresaste mal tus datos, volve a intentarlo","","warning");
+                
+            }
             
-            logueado(nombre);
-            
-    
-        }else{
-            
-            swal("Ingresaste mal tus datos, volve a intentarlo","","warning");
-            
-        }
+        })
         
     });
 
