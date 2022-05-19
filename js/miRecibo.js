@@ -1,7 +1,7 @@
 const categoria = ["Maestranza", "Administrativo", "Vendedor", "Cajero", "Auxiliar", "Auxiliar Esp"];
 const escalas = [79828.57, 80695.88, 80984.96, 80984.96, 80984.96, 81679.33];
 const sueldosCargados = [];
-
+const DateTime = luxon.DateTime ;
 
 //evento que deshabilita el input "Categoria" si no sos de Comercio
 document.getElementById("sindicato").addEventListener("input", () => {
@@ -44,7 +44,6 @@ document.getElementById("btn__eliminar").addEventListener("click", () =>{
     let tabla = document.getElementById("tabla__sueldos");
     tabla !== null && tabla.remove()
         
-    
 })
 
 
@@ -54,6 +53,7 @@ document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
     e.preventDefault();
 
     let periodo = document.getElementById("periodo").value;
+    let fIngreso = document.getElementById("FIngreso").value;
     let sindicatoElegido = document.getElementById("sindicato").value;
     let basico = parseInt(document.getElementById("Basico").value)
     let hsLaV = parseInt(document.getElementById("HsExtrasLaV").value);
@@ -63,8 +63,9 @@ document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
 
         if((basico > escalas[categoria.indexOf(cat)] && sindicatoElegido == "Comercio") || sindicatoElegido == "Fuera de Convenio"){
 
-            const total1 = new Sueldo (basico, hsLaV, hsFS, ausencias, sindicatoElegido);
-            SeguroDeCalcular(total1.sueldoNeto())
+            const total1 = new Sueldo (fIngreso, basico, hsLaV, hsFS, ausencias, sindicatoElegido);
+            let total = total1.sueldoNeto()
+            SeguroDeCalcular(total)
             sueldosCargados.push(new SueldosNetos(periodo, total1.sueldoNeto()));
             for (const acum of sueldosCargados){
                 acum.guardarLocalStorage();
@@ -72,7 +73,7 @@ document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
 
         }else{
             
-            const total1 = new Sueldo (escalas[categoria.indexOf(cat)], hsLaV, hsFS, ausencias, sindicatoElegido);
+            const total1 = new Sueldo (fIngreso, escalas[categoria.indexOf(cat)], hsLaV, hsFS, ausencias, sindicatoElegido);
             let total = total1.sueldoNeto()
             SeguroDeCalcular(total)
             sueldosCargados.push(new SueldosNetos(periodo, total1.sueldoNeto()));
@@ -90,22 +91,37 @@ class SueldosNetos{
         this.periodo = periodo.toUpperCase();
         this.neto = neto;
     }
-
-    guardarLocalStorage(){
-        localStorage.setItem(sessionStorage.getItem("usuario"), JSON.stringify(sueldosCargados));
+   guardarLocalStorage(){
+        const tablaTotal = sueldosCargados.concat(JSON.parse(localStorage.getItem(sessionStorage.getItem("usuario"))))
+        localStorage.setItem(sessionStorage.getItem("usuario"), JSON.stringify(tablaTotal));
     }
-}
 
+}
 
 //clase para los calculos del sueldo neto
 class Sueldo{
-    constructor(basico, hsLaV, hsFS, ausencias, sindicato){
+    constructor(FIngreso, basico, hsLaV, hsFS, ausencias, sindicato){
+        this.FIngreso = FIngreso
         this.basico = parseInt (basico);
         this.hsLaV = parseInt (hsLaV);
         this.hsFS = parseInt (hsFS);
         this.ausencias = parseInt (ausencias);
         this.sindicato = sindicato;              
     };
+
+    calculoAntiguedad (){
+        let antiguedad = 0;
+        let fechaIngresada = DateTime.fromISO(this.FIngreso);
+        let t = DateTime.now();
+        let difYears = parseInt(t.diff(fechaIngresada, 'months').as(`years`));
+        console.log(difYears);
+        if (difYears >= 1){
+            for(let i = 0; i <= difYears; i++){
+                antiguedad = i * 1 / 100;
+            }
+            return antiguedad * this.basico;
+        }        
+    }
 
     calculohs(){
         if(this.sindicato == "Comercio"){
@@ -129,7 +145,7 @@ class Sueldo{
 
     sueldoNeto() {
         if (this.sindicato == "Comercio") {
-            let neto = ( this.calculoBasico() + this.calculohs() ) * 0.80;
+            let neto = ( this.calculoBasico() + this.calculoAntiguedad() + this.calculohs() ) * 0.80;
             return parseInt(neto);
         }else{
             let neto = ( this.calculoBasico() + this.calculohs() ) * 0.83;
@@ -162,22 +178,7 @@ function SeguroDeCalcular (total){
 
 }
 
-/*function validacionSac(){
-    if (sac.length == 0){
-        return 0;
-    }else{
-        return sac[0];
-    }
-}*/
 
-/*    if(periodo == "junio" || periodo == "diciembre"){   
-    
-        for (let i = 1 ; i <= 6; i++){
-        sac.push(prompt("Ingresa tus sueldos netos de enero a junio, o de julio a diciembre para conocer tu Aguinaldo"));
-    }   
-        sac.sort((a, b) => b - a)
-
-    };*/
 
 
 

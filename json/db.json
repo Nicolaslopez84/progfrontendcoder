@@ -1,11 +1,11 @@
 
 {
-    "usuarios":
-    [
+  "usuarios":
+  [
 
-        {"usuario": "nicolasl", "password": "12345"}, 
-        {"usuario": "tomasc", "password": "12345"} 
+      {"usuario": "nicolasl", "password": "12345"}, 
+      {"usuario": "tomasc", "password": "12345"} 
 
-    ]
-    
+  ]
+  
 }
