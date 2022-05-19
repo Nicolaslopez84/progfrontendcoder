@@ -3,6 +3,7 @@ const escalas = [79828.57, 80695.88, 80984.96, 80984.96, 80984.96, 81679.33];
 const sueldosCargados = [];
 const DateTime = luxon.DateTime ;
 
+
 //evento que deshabilita el input "Categoria" si no sos de Comercio
 document.getElementById("sindicato").addEventListener("input", () => {
     
@@ -33,7 +34,6 @@ document.getElementById("btn__sueldos").addEventListener("click", () =>{
     }
     
     datosGuardados.innerHTML = tabla
-
  
 })
 
@@ -66,7 +66,7 @@ document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
             const total1 = new Sueldo (fIngreso, basico, hsLaV, hsFS, ausencias, sindicatoElegido);
             let total = total1.sueldoNeto()
             SeguroDeCalcular(total)
-            sueldosCargados.push(new SueldosNetos(periodo, total1.sueldoNeto()));
+            sueldosCargados.push(new SueldosNetos(periodo, total));
             for (const acum of sueldosCargados){
                 acum.guardarLocalStorage();
                 }
@@ -76,7 +76,7 @@ document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
             const total1 = new Sueldo (fIngreso, escalas[categoria.indexOf(cat)], hsLaV, hsFS, ausencias, sindicatoElegido);
             let total = total1.sueldoNeto()
             SeguroDeCalcular(total)
-            sueldosCargados.push(new SueldosNetos(periodo, total1.sueldoNeto()));
+            sueldosCargados.push(new SueldosNetos(periodo, total));
             for (const acum of sueldosCargados){
                 acum.guardarLocalStorage();
             }
@@ -90,65 +90,64 @@ class SueldosNetos{
     {
         this.periodo = periodo.toUpperCase();
         this.neto = neto;
-    }
-   guardarLocalStorage(){
-        const tablaTotal = sueldosCargados.concat(JSON.parse(localStorage.getItem(sessionStorage.getItem("usuario"))))
-        localStorage.setItem(sessionStorage.getItem("usuario"), JSON.stringify(tablaTotal));
-    }
+    };
+    
+    guardarLocalStorage(){
+        localStorage.setItem(sessionStorage.getItem("usuario"), JSON.stringify(sueldosCargados));
+    };
 
-}
+};
 
 //clase para los calculos del sueldo neto
 class Sueldo{
     constructor(FIngreso, basico, hsLaV, hsFS, ausencias, sindicato){
-        this.FIngreso = FIngreso
-        this.basico = parseInt (basico);
+        this.FIngreso = FIngreso;
+        this.basico = basico;
         this.hsLaV = parseInt (hsLaV);
         this.hsFS = parseInt (hsFS);
         this.ausencias = parseInt (ausencias);
         this.sindicato = sindicato;              
     };
 
-    calculoAntiguedad (){
+    calculoAntiguedad(){
         let antiguedad = 0;
         let fechaIngresada = DateTime.fromISO(this.FIngreso);
         let t = DateTime.now();
         let difYears = parseInt(t.diff(fechaIngresada, 'months').as(`years`));
-        console.log(difYears);
         if (difYears >= 1){
             for(let i = 0; i <= difYears; i++){
                 antiguedad = i * 1 / 100;
-            }
-            return antiguedad * this.basico;
-        }        
-    }
-
-    calculohs(){
-        if(this.sindicato == "Comercio"){
-            let valorExtras = (this.basico/200*this.hsLaV*1.5) + (this.basico/200*this.hsFS*2);
-            return parseInt(valorExtras);
-        }else{
-            let valorExtras = (this.basico/200*this.hsLaV*1.5) + (this.basico/200*this.hsFS*2);
-            return parseInt(valorExtras);
-        };
+            };
+            return antiguedad;
+        }else{return 0};    
     };
 
-    calculoBasico(){
-        if(this.sindicato == "Comercio"){
-            let sueldoBruto = ( this.basico / 30 * (30-this.ausencias) ) * 1.0833;
-            return parseInt(sueldoBruto);
-        }else{
-            let sueldoBruto = this.basico / 30 * (30-this.ausencias);
-            return parseInt(sueldoBruto);
-        };
+    calculoHs50(){
+            let hs50 = ( this.basico / 200 * this.hsLaV * 1.5 );
+            return hs50;
+    };     
+            
+    calculoHs100(){ 
+            let hs100 = ( this.basico / 200*this.hsFS*2 );
+            return hs100;
+    };
+
+    calculoAusencias(){
+            let aus = -( this.basico / 30 * this.ausencias );
+            return aus;
+    };
+
+    calculoBruto (){   
+            let sBruto = this.basico * (1 + this.calculoAntiguedad()) + this.calculoHs50() + this.calculoHs100() + this.calculoAusencias();
+            return sBruto;
     };
 
     sueldoNeto() {
         if (this.sindicato == "Comercio") {
-            let neto = ( this.calculoBasico() + this.calculoAntiguedad() + this.calculohs() ) * 0.80;
+            let neto = this.calculoBruto() * 1.0833 * 0.80;
             return parseInt(neto);
         }else{
-            let neto = ( this.calculoBasico() + this.calculohs() ) * 0.83;
+            let neto = this.calculoBruto() * 0.83;
             return parseInt(neto);
         };
     };
@@ -176,7 +175,7 @@ function SeguroDeCalcular (total){
         }
     });
 
-}
+};
 
 
 
