@@ -153,6 +153,17 @@ class Sueldo{
     };
 };
 
+//evento para impresion del recibo
+
+document.getElementById("btn__imprimirRecibo").addEventListener("clic", () => {
+
+
+
+
+    }
+)
+
+
 //funciones sweetalert
 function SeguroDeCalcular (total){
 
