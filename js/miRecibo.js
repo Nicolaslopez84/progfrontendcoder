@@ -2,7 +2,8 @@ const categoria = ["Maestranza", "Administrativo", "Vendedor", "Cajero", "Auxili
 const escalas = [79828.57, 80695.88, 80984.96, 80984.96, 80984.96, 81679.33];
 const sueldosCargados = [];
 const DateTime = luxon.DateTime ;
-
+let i = 0
+let total1 = {}
 
 //evento que deshabilita el input "Categoria" si no sos de Comercio
 document.getElementById("sindicato").addEventListener("input", () => {
@@ -14,44 +15,15 @@ document.getElementById("sindicato").addEventListener("input", () => {
     
 })
 
-//evento para mostrar sueldos guardados 
-document.getElementById("btn__sueldos").addEventListener("click", () =>{
-   
-    let datosGuardados = document.getElementById("netos__guardados");
-    let almacenados = JSON.parse(localStorage.getItem(sessionStorage.getItem("usuario")))
-    let tabla = "";
-    almacenados != undefined && armarTabla()
-    
-    function armarTabla(){
-        for (let i = 0; i < almacenados.length; i++) {  
-        tabla += 
-        `<tr id="tabla__sueldos">
-        <th scope="row">${i+1}</th>
-        <td>${almacenados[i].periodo}</td>
-        <td>${almacenados[i].neto} pesos</td>
-        </tr>`
-        }
-    }
-    
-    datosGuardados.innerHTML = tabla
- 
-})
-
-
-//evento para eliminar la tabla de sueldos guardados
-document.getElementById("btn__eliminar").addEventListener("click", () =>{
-        
-    let tabla = document.getElementById("tabla__sueldos");
-    tabla !== null && tabla.remove()
-        
-})
-
 
 //evento para el calculo del sueldo neto
 document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
    
     e.preventDefault();
-
+    let reciboAnterior = document.getElementById(`tabla__recibo`)
+    reciboAnterior != null  && reciboAnterior.remove()
+    let tablaAnterior = document.getElementById(`tabla__sueldos`)
+    tablaAnterior != null  && tablaAnterior.remove()
     let periodo = document.getElementById("periodo").value;
     let fIngreso = document.getElementById("FIngreso").value;
     let sindicatoElegido = document.getElementById("sindicato").value;
@@ -59,28 +31,33 @@ document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
     let hsLaV = parseInt(document.getElementById("HsExtrasLaV").value);
     let hsFS = parseInt(document.getElementById("HsExtrasFS").value);
     let ausencias = parseInt(document.getElementById("ausencias").value);    
-    let cat = document.getElementById("categorias").value;  
+    let cat = document.getElementById("categorias").value; 
+    JSON.stringify(periodo, fIngreso, sindicatoElegido, basico, hsLaV, hsFS, ausencias, cat)
 
         if((basico > escalas[categoria.indexOf(cat)] && sindicatoElegido == "Comercio") || sindicatoElegido == "Fuera de Convenio"){
-
-            const total1 = new Sueldo (fIngreso, basico, hsLaV, hsFS, ausencias, sindicatoElegido);
-            let total = total1.sueldoNeto()
-            SeguroDeCalcular(total)
-            sueldosCargados.push(new SueldosNetos(periodo, total));
+            
+            let datosRecibo = [basico, hsLaV, hsFS, ausencias, sindicatoElegido]
+            sessionStorage.setItem("recibo", JSON.stringify(datosRecibo))
+            total1 = new Sueldo (fIngreso, basico, hsLaV, hsFS, ausencias, sindicatoElegido);
+            SeguroDeCalcular(total1.sueldoNeto())
+            sueldosCargados.push(new SueldosNetos(periodo, total1.sueldoNeto()));
             for (const acum of sueldosCargados){
                 acum.guardarLocalStorage();
                 }
 
         }else{
-            
-            const total1 = new Sueldo (fIngreso, escalas[categoria.indexOf(cat)], hsLaV, hsFS, ausencias, sindicatoElegido);
-            let total = total1.sueldoNeto()
-            SeguroDeCalcular(total)
-            sueldosCargados.push(new SueldosNetos(periodo, total));
+            let escalaElegida = escalas[categoria.indexOf(cat)]
+            let datosRecibo = [escalaElegida, hsLaV, hsFS, ausencias, sindicatoElegido]
+            sessionStorage.setItem("recibo", JSON.stringify(datosRecibo))
+            total1 = new Sueldo (fIngreso, escalas[categoria.indexOf(cat)], hsLaV, hsFS, ausencias, sindicatoElegido);
+            SeguroDeCalcular(total1.sueldoNeto())
+            sueldosCargados.push(new SueldosNetos(periodo, total1.sueldoNeto()));
             for (const acum of sueldosCargados){
                 acum.guardarLocalStorage();
             }
         }
+        mostrarRecibo();
+
 })
 
 
@@ -153,16 +130,128 @@ class Sueldo{
     };
 };
 
+//funcion para mostrar sueldos guardados 
+document.getElementById("btn__sueldos").addEventListener("click", () =>{
+    
+    let tablaAnterior = document.getElementById(`tabla__sueldos`)
+    tablaAnterior != null  && tablaAnterior.remove()
+
+    let almacenados = JSON.parse(localStorage.getItem(sessionStorage.getItem("usuario")))
+    let datosTabla = "";
+        
+        const padreTablas = document.getElementById(`sueldos__guardados`)
+        const tabla = document.createElement(`table`)
+        tabla.setAttribute(`class`,`table table-striped`)
+        tabla.setAttribute(`id`, `tabla__sueldos`)
+        tabla.innerHTML =
+            `<thead id="tabla__encabezado">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Periodo</th>
+                        <th scope="col">Neto</th>
+                    </tr>
+            </thead>`
+        padreTablas.appendChild(tabla)
+        const encabezadoTabla = document.querySelector(`#tabla__encabezado`)
+        const cuerpoTabla = document.createElement(`tbody`)   
+        cuerpoTabla.setAttribute(`id`, `tabla__cuerpo`)
+        encabezadoTabla.insertAdjacentElement("afterend", cuerpoTabla)
+        
+        for (let i = 0; i < almacenados.length; i++) {  
+            datosTabla += 
+                `<tr id="tabla__sueldos">
+                <th scope="row">${i+1}</th>
+                <td>${almacenados[i].periodo}</td>
+                <td>${almacenados[i].neto} pesos</td>
+                </tr>`
+            }
+        
+        cuerpoTabla.innerHTML = datosTabla
+        datosTabla.appendChild(cuerpoTabla)
+
+})
+
+
+//funcion para mostrar el recibo de sueldo
+function mostrarRecibo(){
+
+        const padreTablas = document.getElementById(`recibo`)
+        const tabla = document.createElement(`table`)
+        tabla.setAttribute(`class`,`table table-striped`)
+        tabla.setAttribute(`id`, `tabla__recibo`)
+        tabla.innerHTML =
+            `<thead id="tabla2__encabezado">
+                <tr>
+                <th scope="col">Concepto</th>
+                <th scope="col">Unidades</th>
+                <th scope="col">Valor en $</th>
+                </tr>
+            </thead>`
+        padreTablas.appendChild(tabla)
+        const encabezadoTabla = document.querySelector(`#tabla2__encabezado`)
+        const cuerpoTabla = document.createElement(`tbody`)   
+        cuerpoTabla.setAttribute(`id`, `tabla2__cuerpo`)
+        encabezadoTabla.insertAdjacentElement("afterend", cuerpoTabla)
+        let datosRecibo = JSON.parse(sessionStorage.getItem("recibo"))
+        let miRecibo = ""
+        miRecibo +=
+        `<tr>
+            <td>Sueldo Basico</td>
+            <td>30</td>
+            <td>${datosRecibo[0]}</td>
+        </tr>
+        <tr>
+            <td>Hs al 50%</td>
+            <td>${datosRecibo[1]}</td>
+            <td>${parseInt(total1.calculoHs50())}</td>
+        </tr>
+        <tr>
+            <td>Hs al 100</td>
+            <td>${datosRecibo[2]}</td>
+            <td>${parseInt(total1.calculoHs100())}</td>
+        </tr>
+        <tr>
+            <td>Ausencias</td>
+            <td>${datosRecibo[3]}</td>
+            <td>${parseInt(total1.calculoAusencias())}</td>
+        </tr>
+        <tr>
+            <td>Antiguedad</td>
+            <td>${total1.calculoAntiguedad()*100}</td>
+            <td>${parseInt(datosRecibo[0] * total1.calculoAntiguedad())}</td>
+        </tr>
+        <tr>
+            <td>Presentismo</td>
+            <td>8.33%</td>
+            <td>${parseInt(total1.calculoBruto()* (datosRecibo[4] == "Comercio" ? 0.0833 : 0))}</td>
+        </tr>
+        <tr>
+        <td>Sueldo Bruto ${parseInt(total1.calculoBruto())}</td>
+        <td>Retenciones ${parseInt(total1.calculoBruto () * (datosRecibo[4] == "Comercio" ? 0.8 : 0.83)) }</td>
+        <td>Sueldo Neto ${total1.sueldoNeto()}</td>
+        </tr>
+        `
+        cuerpoTabla.innerHTML = miRecibo
+        miRecibo.appendChild(cuerpoTabla)
+
+}
+
+
 //evento para impresion del recibo
-
-document.getElementById("btn__imprimirRecibo").addEventListener("clic", () => {
-
-
-
-
-    }
-)
-
+document.getElementById("btn__imprimir").addEventListener("click", () => {
+    
+    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+    mywindow.document.write('<html><head>');
+    mywindow.document.write('<style>.tabla{width:100%;border-collapse:collapse;margin:16px 0 16px 0;}.tabla th{border:1px solid #ddd;padding:4px;background-color:#d4eefd;text-align:left;font-size:15px;}.tabla td{border:1px solid #ddd;text-align:left;padding:6px;}</style>');
+    mywindow.document.write('</head><body >');
+    mywindow.document.write(document.getElementById('recibo').innerHTML);
+    mywindow.document.write('</body></html>');
+    mywindow.document.close(); // necesario para IE >= 10
+    mywindow.focus(); // necesario para IE >= 10
+    mywindow.print();
+    mywindow.close();
+  
+})
 
 //funciones sweetalert
 function SeguroDeCalcular (total){

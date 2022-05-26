@@ -40,6 +40,7 @@ if (!!sesionIniciada == true){
     document.getElementById("login").setAttribute("hidden","");
     document.getElementById("logout").removeAttribute("hidden");
     document.getElementById("btn__calcular").removeAttribute("hidden");
+    document.getElementById("datos").removeAttribute("hidden");
 }
 
 //modifica el boton de inicio y habilita el boton calcular
@@ -48,8 +49,9 @@ function logueado(nombre){
 
         let titulo = document.getElementById("tituloMiRecibo");
         titulo.innerText = `${nombre}, bienvenido a RH Lop Jobs`;
-        document.getElementById("login").setAttribute("hidden","");
+        document.getElementById("login").setAttribute("hidden",""); 
         document.getElementById("logout").removeAttribute("hidden");
+        document.getElementById("datos").removeAttribute("hidden");
         document.getElementById("btn__calcular").removeAttribute("hidden");  
     
 }
@@ -69,11 +71,12 @@ document.getElementById("logout").addEventListener ("click", () => {
         document.getElementById("login").removeAttribute("hidden");
         document.getElementById("logout").setAttribute("hidden","");
         document.getElementById("btn__calcular").setAttribute("hidden","");
+        document.getElementById("datos").setAttribute("hidden",""); 
         let tabla = document.getElementById("tabla__sueldos");
         tabla !== null && tabla.remove();
+        let reciboAnterior = document.getElementById(`tabla__recibo`)
+        reciboAnterior != null  && reciboAnterior.remove()
         
-
-
 })
 
 
