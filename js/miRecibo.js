@@ -253,6 +253,7 @@ document.getElementById("btn__imprimir").addEventListener("click", () => {
   
 })
 
+
 //funciones sweetalert
 function SeguroDeCalcular (total){
 
