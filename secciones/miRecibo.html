@@ -109,102 +109,108 @@
       <div class="body__contenido">
             <h1 id="tituloMiRecibo">Bienvenido a RH Lop Jobs</h1>
             <section>
-                <p>Aqui podras simular, guardar tus ultimos 12 recibos y descargarlos, sigue las instrucciones para conocer cual seria tu sueldo en mano del mes.
-                  <br>
-                  Tenes que loguearte para usar nuestros recursos.
+                <p>Aqui podras simular e imprimir tus recibos del mes, ademas podras guardar los últimos cálculos y asi la próxima vez que inicies sesión los tendras a tu disposición.
                 </p>
+                <h3>Instrucciones de uso</h3>
+                <p class="instrucciones__simulador">1. Deberas loguearte para acceder a nuestros recursos. <br>
+                   2. Luego carga las unidades de cada concepto y elegi categoría y convenio. <br>
+                   3. Si tu sueldo básico es mayor al de la categoría deberas indicarlo. <br>
+                   4. Si estas Fuera de Convenio deberas indicar <strong>obligatoriamente</strong> tu <strong>Básico</strong>. <br> 
+                   Listo!!! Podes empezar, pero <strong>recuerda</strong> tus datos se guardaran pero se eliminaran cuando vuelvas a loguearte y comiences a calcular nuevos sueldos. <br><br></p>
             </section>
           <div class="container-fluid">
-            <div class="row row-cols-2">
-              <div class="col">
-                <form id="datos__recibo" class="row">
-                    <div id="mesALiquidar" class="col-md-6">
-                      <label class="form-label">Periodo</label>
-                      <select id="periodo" class="form-select">
-                        <option selected aria-checked="true">Enero</option>
-                        <option>Febrero</option>
-                        <option>Marzo</option>
-                        <option>Abril</option>  
-                        <option>Mayo</option>
-                        <option>Junio</option>
-                        <option>Agosto</option>
-                        <option>Septiembre</option> 
-                        <option>Octubre</option> 
-                        <option>Noviembre</option> 
-                        <option>Diciembre</option>                    
-                      </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">Fecha de Ingreso</label>
-                      <input type="date" class="form-control" id="FIngreso" placeholder="Fecha de Ingreso">
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">Basico</label>
-                      <input type="number" class="form-control" id="Basico" placeholder="Sueldo Basico">
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">Hs Extras L a V</label>
-                      <input type="number" class="form-control" id="HsExtrasLaV" placeholder="Horas Extras dias habiles" required>
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">Hs Extras Fs</label>
-                      <input type="number" class="form-control" id="HsExtrasFS" placeholder="Horas Extras no habiles" required>
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">Categoria</label>
-                      <select id="categorias" class="form-select">
-                        <option selected aria-checked="true">Sin categoria</option>
-                        <option>Administrativo</option>
-                        <option>Vendedor</option>
-                        <option>Cajero</option>  
-                        <option>Auxiliar</option>
-                        <option>Maestranza</option>
-                        <option>Auxiliar Esp</option>                   
-                      </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">Ausencias</label>
-                      <input type="number" class="form-control" id="ausencias" required>
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">Categoria</label>
-                      <select id="sindicato" class="form-select">
-                        <option selected>Comercio</option>
-                        <option>Fuera de Convenio</option>
-                      </select>
-                    </div>
-                    <div class="col-md-4 botones justify-content-center">
-                      <button id="btn__calcular" type="submit" class="btn btn-primary m-1" hidden >Calcular</button>
-                      <button type="reset" class="btn btn-primary m-1" >Reestablecer</button>
-                    </div>
-                </form>  
+            <div class="row">
+              <div class="col-lg-6">
+                  <form id="datos__recibo" class="row">
+                      <div id="mesALiquidar" class="col-md-6">
+                        <label class="form-label">Periodo</label>
+                        <select id="periodo" class="form-select">
+                          <option selected aria-checked="true">Enero</option>
+                          <option>Febrero</option>
+                          <option>Marzo</option>
+                          <option>Abril</option>  
+                          <option>Mayo</option>
+                          <option>Junio</option>
+                          <option>Agosto</option>
+                          <option>Septiembre</option> 
+                          <option>Octubre</option> 
+                          <option>Noviembre</option> 
+                          <option>Diciembre</option>                    
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Fecha de Ingreso</label>
+                        <input type="date" class="form-control" id="FIngreso" placeholder="Fecha de Ingreso">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Basico</label>
+                        <input type="number" class="form-control" id="Basico" placeholder="Sueldo Basico">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Hs Extras L a V</label>
+                        <input type="number" class="form-control" id="HsExtrasLaV" placeholder="Horas Extras dias habiles" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Hs Extras Fs</label>
+                        <input type="number" class="form-control" id="HsExtrasFS" placeholder="Horas Extras no habiles" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Categoria</label>
+                        <select id="categorias" class="form-select">
+                          <option selected aria-checked="true">Sin categoria</option>
+                          <option>Administrativo</option>
+                          <option>Vendedor</option>
+                          <option>Cajero</option>  
+                          <option>Auxiliar</option>
+                          <option>Maestranza</option>
+                          <option>Auxiliar Esp</option>                   
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Ausencias</label>
+                        <input type="number" class="form-control" id="ausencias" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Categoria</label>
+                        <select id="sindicato" class="form-select">
+                          <option selected>Comercio</option>
+                          <option>Fuera de Convenio</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4 botones justify-content-center">
+                        <button id="btn__calcular" type="submit" class="btn btn-primary m-1" hidden >Calcular</button>
+                        <button type="reset" class="btn btn-primary m-1" >Reestablecer</button>
+                      </div>
+                  </form>  
               </div>
-              <div class="card" id="datos" hidden>
-                <p>
-                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-                    Sueldos Guardados
-                  </button>
-                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-                    Recibo de Sueldo
-                  </button>
-                </p>
-                <div class="collapse" id="collapseExample1">
-                  <div class="card card-body">
-                    <div class="col" id="sueldos__guardados"></div>  
+              <div class="col-lg-6" id="tablas" hidden>
+                <div class="card">
+                  <p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                      Sueldos Guardados
+                    </button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                      Recibo de Sueldo
+                    </button>
+                  </p>
+                  <div class="collapse" id="collapseExample1">
+                    <div class="card card-body">
+                      <div class="col" id="sueldos__guardados"></div>  
+                    </div>
+                  </div>
+                  <div class="collapse" id="collapseExample2">
+                    <div class="card card-body">
+                      <div class="col" id="recibo"></div>   
+                    </div>
                   </div>
                 </div>
-                <div class="collapse" id="collapseExample2">
-                  <div class="card card-body">
-                    <div class="col" id="recibo"></div>   
-                  </div>
-                </div>
-              </div>
-              <div class="col justify-content-end m-2 botones">
-                <button id="btn__sueldos" type="button" class="btn btn-primary m-1">Ver Sueldos</button>
-                <button id="btn__imprimir" type="button" class="btn btn-primary m-1" >Imprimir Recibo</button>
               </div>
             </div>
-        </div>  
+          </div>  
+          <div class="d-flex justify-content-center m-2 botones">
+            <button id="btn__sueldos" type="button" class="btn btn-primary m-1" hidden>Ver Sueldos</button>
+            <button id="btn__imprimir" type="button" class="btn btn-primary m-1" hidden>Imprimir Recibo</button>
+          </div>
         <!--Footer-->
         <footer>       
             <div class="footer__navegacion"> 

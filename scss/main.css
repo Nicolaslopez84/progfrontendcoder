@@ -70,11 +70,12 @@ body {
   font-family: Oswald;
 }
 
-.body__contenido {
-  /* animacion para los h */
+.body__contenido .instrucciones__simulador {
+  text-align: start;
+  margin-left: 2rem;
 }
 
-.body__contenido h1, .body__contenido h2 {
+.body__contenido h1, .body__contenido h2, .body__contenido h3 {
   -webkit-animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   padding: 1%;
@@ -125,7 +126,8 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-      grid-template-areas: "footerNav ubicacion ubicacion" "footerRedes politicas copyright";
+      grid-template-areas: "footerNav ubicacion ubicacion"
+ "footerRedes politicas copyright";
   -ms-grid-columns: 0.5fr 3fr 2fr;
       grid-template-columns: 0.5fr 3fr 2fr;
   -ms-grid-rows: 1fr 5rem;
@@ -258,7 +260,7 @@ footer h4 {
 
 @media screen and (max-width: 768px) {
   .footer__ubicacion iframe {
-    margin: 0 8vh;
+    max-width: auto;
   }
 }
 
@@ -321,7 +323,9 @@ footer h4 {
       grid-template-columns: 1.5fr 1.5fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "presentacionTitulo presentacionTitulo" "presentacionParrafo presentacionVideo" "card presentacionVideo";
+      grid-template-areas: "presentacionTitulo presentacionTitulo"
+ "presentacionParrafo presentacionVideo"
+ "card presentacionVideo";
   display: -ms-grid;
   display: grid;
   justify-items: center;
@@ -463,7 +467,9 @@ p {
 }
 
 .equipo__empleado {
-      grid-template-areas: "nombre presentacion video" "foto presentacion video" "cv presentacion linkredes";
+      grid-template-areas: "nombre presentacion video"
+ "foto presentacion video"
+ "cv presentacion linkredes";
   -ms-grid-columns: 1.5fr 3fr 2fr;
       grid-template-columns: 1.5fr 3fr 2fr;
   -ms-grid-rows: 1fr 2fr 0.5fr;
@@ -515,7 +521,11 @@ p {
     justify-items: center;
     -ms-grid-columns: 1fr 3fr;
         grid-template-columns: 1fr 3fr;
-        grid-template-areas: "nombre presentacion" "foto presentacion" "linkredes presentacion" "cv presentacion" "video video";
+        grid-template-areas: "nombre presentacion"
+ "foto presentacion"
+ "linkredes presentacion"
+ "cv presentacion"
+ "video video";
   }
 }
 

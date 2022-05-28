@@ -38,21 +38,17 @@ if (!!sesionIniciada == true){
     let titulo = document.getElementById("tituloMiRecibo");
     titulo.innerText = `${sessionStorage.getItem("nombre")}, bienvenido a RH Lop Jobs`;
     document.getElementById("login").setAttribute("hidden","");
-    document.getElementById("logout").removeAttribute("hidden");
-    document.getElementById("btn__calcular").removeAttribute("hidden");
-    document.getElementById("datos").removeAttribute("hidden");
+    mostrarBotones()
 }
 
-//modifica el boton de inicio y habilita el boton calcular
+//modifica el boton de inicio y habilita los botones interactivos
 function logueado(nombre){
 
 
         let titulo = document.getElementById("tituloMiRecibo");
         titulo.innerText = `${nombre}, bienvenido a RH Lop Jobs`;
         document.getElementById("login").setAttribute("hidden",""); 
-        document.getElementById("logout").removeAttribute("hidden");
-        document.getElementById("datos").removeAttribute("hidden");
-        document.getElementById("btn__calcular").removeAttribute("hidden");  
+        mostrarBotones()  
     
 }
 
@@ -69,9 +65,7 @@ document.getElementById("logout").addEventListener ("click", () => {
         let titulo = document.getElementById("tituloMiRecibo");
         titulo.innerText = `Bienvenido a RH Lop Jobs`;
         document.getElementById("login").removeAttribute("hidden");
-        document.getElementById("logout").setAttribute("hidden","");
-        document.getElementById("btn__calcular").setAttribute("hidden","");
-        document.getElementById("datos").setAttribute("hidden",""); 
+        esconderBotones()
         let tabla = document.getElementById("tabla__sueldos");
         tabla !== null && tabla.remove();
         let reciboAnterior = document.getElementById(`tabla__recibo`)
@@ -79,5 +73,21 @@ document.getElementById("logout").addEventListener ("click", () => {
         
 })
 
+function mostrarBotones(){
 
+        document.getElementById("logout").removeAttribute("hidden");
+        document.getElementById("tablas").removeAttribute("hidden");
+        document.getElementById("btn__sueldos").removeAttribute("hidden");
+        document.getElementById("btn__calcular").removeAttribute("hidden");
+        document.getElementById("btn__imprimir").removeAttribute("hidden"); 
+}
 
+function esconderBotones(){
+
+        document.getElementById("logout").setAttribute("hidden","");
+        document.getElementById("btn__calcular").setAttribute("hidden","");
+        document.getElementById("btn__imprimir").setAttribute("hidden","");
+        document.getElementById("btn__sueldos").setAttribute("hidden","");
+        document.getElementById("tablas").setAttribute("hidden","");
+
+}

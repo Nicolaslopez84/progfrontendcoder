@@ -85,7 +85,7 @@ footer {
     }
     margin: 1rem;
     @include tablet{
-      margin: 0 8vh;
+      max-width: auto;
     }
   }
 }

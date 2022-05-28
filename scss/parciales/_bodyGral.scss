@@ -9,7 +9,11 @@ body {
 
 .body__contenido {
     /* animacion para los h */
-    & h1, & h2 {
+    .instrucciones__simulador{
+        text-align: start;
+        margin-left: 2rem;
+    }
+    & h1, & h2, & h3 {
         -webkit-animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
         animation: tracking-in-expand-fwd-top 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
         padding: 1%;

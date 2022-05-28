@@ -36,7 +36,7 @@ document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
 
         if((basico > escalas[categoria.indexOf(cat)] && sindicatoElegido == "Comercio") || sindicatoElegido == "Fuera de Convenio"){
             
-            let datosRecibo = [basico, hsLaV, hsFS, ausencias, sindicatoElegido]
+            let datosRecibo = [basico, hsLaV, hsFS, ausencias, sindicatoElegido, periodo]
             sessionStorage.setItem("recibo", JSON.stringify(datosRecibo))
             total1 = new Sueldo (fIngreso, basico, hsLaV, hsFS, ausencias, sindicatoElegido);
             SeguroDeCalcular(total1.sueldoNeto())
@@ -47,7 +47,7 @@ document.getElementById("datos__recibo").addEventListener("submit", (e) =>{
 
         }else{
             let escalaElegida = escalas[categoria.indexOf(cat)]
-            let datosRecibo = [escalaElegida, hsLaV, hsFS, ausencias, sindicatoElegido]
+            let datosRecibo = [escalaElegida, hsLaV, hsFS, ausencias, sindicatoElegido, periodo]
             sessionStorage.setItem("recibo", JSON.stringify(datosRecibo))
             total1 = new Sueldo (fIngreso, escalas[categoria.indexOf(cat)], hsLaV, hsFS, ausencias, sindicatoElegido);
             SeguroDeCalcular(total1.sueldoNeto())
@@ -130,7 +130,7 @@ class Sueldo{
     };
 };
 
-//funcion para mostrar sueldos guardados 
+//evento para mostrar sueldos guardados en localstorage
 document.getElementById("btn__sueldos").addEventListener("click", () =>{
     
     let tablaAnterior = document.getElementById(`tabla__sueldos`)
@@ -239,15 +239,13 @@ function mostrarRecibo(){
 
 //evento para impresion del recibo
 document.getElementById("btn__imprimir").addEventListener("click", () => {
-    
-    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
-    mywindow.document.write('<html><head>');
-    mywindow.document.write('<style>.tabla{width:100%;border-collapse:collapse;margin:16px 0 16px 0;}.tabla th{border:1px solid #ddd;padding:4px;background-color:#d4eefd;text-align:left;font-size:15px;}.tabla td{border:1px solid #ddd;text-align:left;padding:6px;}</style>');
-    mywindow.document.write('</head><body >');
+    let datosRecibo = JSON.parse(sessionStorage.getItem("recibo"))
+    let mywindow = window.open('', 'PRINT', 'height=400,width=600');
+    mywindow.document.write(`<html><head><h2>Mi Recibo de sueldo periodo: ${datosRecibo[5]}</h2><br><br>`);
+    mywindow.document.write(`<style>#tabla2__cuerpo{width:100%;border-collapse:collapse;margin:16px 0 16px 0;}#tabla2__cuerpo th{border:1px solid #ddd;padding:4px;background-color:#d4eefd;text-align:left;font-size:15px;}#tabla2__cuerpo td{border:1px solid #ddd;text-align:left;padding:6px;}</style>`);
+    mywindow.document.write(`</head><body >`);
     mywindow.document.write(document.getElementById('recibo').innerHTML);
-    mywindow.document.write('</body></html>');
-    mywindow.document.close(); // necesario para IE >= 10
-    mywindow.focus(); // necesario para IE >= 10
+    mywindow.document.write(`</body></html>`);
     mywindow.print();
     mywindow.close();
   
