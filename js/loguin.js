@@ -8,9 +8,11 @@ document.getElementById("loguearse").addEventListener("submit", (e) =>{
         let usuario = document.getElementById("usuario").value;
         let password = document.getElementById("password").value;
         
-        fetch (`http://localhost:3000/usuarios`)
+        fetch(`../json/db.json`)
         .then(res => res.json())
+
         .then(datos => {
+            console.log(datos)
             const bdUsers = datos;
             if (bdUsers.some((el) => el.usuario === usuario && el.password === password) == true){
             
